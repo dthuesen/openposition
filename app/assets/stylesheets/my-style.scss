@@ -14,15 +14,12 @@
 }
 button, html input[type=button], input[type=reset], input[type=submit] {
     -webkit-appearance: none;
-        background-color: none;
-
+    background-color: none !IMPORTANT;
+    background: none !IMPORTANT;
     cursor: pointer;
+    border: none;
 }
-.input {
-    -webkit-appearance: none;
-    background-color: none;
-    background: none;
-}
+
 
 /* SORTABLE TABLES 
 =====================================*/
