@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @open_positions_list.number %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @open_positions_list.summary %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @open_positions_list.description %>
+</p>
+
+<p>
+  <strong>Option:</strong>
+  <%= @open_positions_list.option %>
+</p>
+
+<p>
+  <strong>Component:</strong>
+  <%= @open_positions_list.component %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @open_positions_list.category %>
+</p>
+
+<p>
+  <strong>Prio:</strong>
+  <%= @open_positions_list.prio %>
+</p>
+
+<p>
+  <strong>Responsible:</strong>
+  <%= @open_positions_list.responsible %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @open_positions_list.state %>
+</p>
+
+<p>
+  <strong>Costmodel:</strong>
+  <%= @open_positions_list.costmodel %>
+</p>
+
+<p>
+  <strong>Affects version:</strong>
+  <%= @open_positions_list.affects_version %>
+</p>
+
+<p>
+  <strong>Issue ticket:</strong>
+  <%= @open_positions_list.issue_ticket %>
+</p>
+
+<p>
+  <strong>Ticket text:</strong>
+  <%= @open_positions_list.ticket_text %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @open_positions_list.notes %>
+</p>
+
+<p>
+  <strong>In sprint:</strong>
+  <%= @open_positions_list.in_sprint %>
+</p>
+
+<%= link_to 'Edit', edit_open_positions_list_path(@open_positions_list) %> |
+<%= link_to 'Back', open_positions_lists_path %>

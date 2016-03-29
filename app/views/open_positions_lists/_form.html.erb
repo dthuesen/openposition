@@ -1,0 +1,95 @@
+<%= form_for(open_positions_list) do |f| %>
+  <% if open_positions_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(open_positions_list.errors.count, "error") %> prohibited this open_positions_list from being saved:</h2>
+
+      <ul>
+      <% open_positions_list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <form class="form-inline">
+    <div class="form-group">
+
+      <div class="field">
+        <%= f.label :number %>
+        <%= f.number_field :number, class: 'form-control' %>
+      </div>
+    
+      <div class="field">
+        <%= f.text_area :summary, placeholder: "Bezeichnung / Zusammenfassung / Kennung vom Kunden", class: 'form-control'  %>
+      </div>
+    
+      <div class="field">
+        <%= f.text_area :description, placeholder: "Ausführlichere Beschreibung der Anforderung", class: 'form-control'  %>
+      </div>
+    
+      <div class="field">
+        <%= f.text_area :option, placeholder: "Optionales Feld für Ergänzungen, Kundenanmerkungen, Abmachungen, etc.", class: 'form-control'  %>
+      </div>
+      
+      <!-- Shortlist Selector -->
+      <div class="btn btn-lg dropdown">
+        <%= f.select :shortlist, ['Ja', 'Nein'], :prompt => "Auf die Shortlist?", class: 'form-control' %>
+      </div>
+      
+      <!-- Komponente Selector -->
+      <div class="btn btn-lg dropdown">
+        <%= f.select :component, ['Facebook', 'Twitter', 'GuteFrage','Youtube', 'Instagram', 'Foren', 'anderes SN (s. Beschreibung)', 'Agent Desktop', 'Overview Panel', 'Detail Panel', 'Statistik', 'FAQ', 'Publishing', 'Config', 'System allgemein', 'Import', 'Filter', 'sonstiges [s. Beschreibung)'], :prompt => "Betrifft Komponente", class: 'form-control'  %>
+      </div>
+      
+      <!-- Kategorie Selector -->
+      <div class="btn btn-lg dropdown">
+        <%= f.select :category, ['FEATURE', 'BUG', 'IMPROVEMENT', 'PROJECT', 'STOPPED'], :prompt => "Kategorie wählen", class: 'form-control' %>
+      </div>
+      
+      <!-- Prio Selector -->
+      <div class="btn btn-lg dropdown">
+        <%= f.select :prio, ['TRIVIAL', 'MINOR', 'MAJOR', 'CRITICAL', 'BLOCKER'], :prompt => "Priorisierung wählen", class: 'form-control'  %>
+      </div>
+      
+      <!-- Verantwortlichkeit Selector -->
+      <div class="btn btn-lg dropdown">
+        <%= f.select :responsible, ['PO', 'QM', 'PL'], :prompt => "Zuständigkeit wählen", class: 'form-control'  %>
+      </div>
+      
+      <!-- Status Selector -->
+      <div class="btn btn-lg dropdown">
+        <%= f.select :state, ['TO-DO', 'ANALYSIS', 'IN PROGRESS', 'QA', 'DONE', 'REJECTED'], :prompt => "Aktueller Status", class: 'form-control'  %>
+      </div>
+      
+      <!-- Kostenmodell Selector -->
+      <div class="btn btn-lg dropdown">
+        <%= f.select :costmodel, ['Roadmap', 'Cost-Sharing', 'Kundenprojekt'], :prompt => "Kostenmodell angeben", class: 'form-control'  %>
+      </div>
+    
+      <div class="field">
+        <%= f.text_field :affects_version, placeholder: "Affected Versions", class: 'form-control'  %>
+      </div>
+      
+      <div class="field">
+        <%= f.text_field :issue_ticket, placeholder: "Ticket-Nummer in JIRA", class: 'form-control'  %>
+      </div>
+    
+      <div class="field">
+        <%= f.text_area :ticket_text, placeholder: "Text des Tickets", class: 'form-control'  %>
+      </div>
+    
+      <div class="field">
+        <%= f.text_area :notes, placeholder: "Zusätzliche Notizen", class: 'form-control'  %>
+      </div>
+    
+      <div class="field">
+        <%= f.text_field :in_sprint, placeholder: "Umgestezt in Sprint XYZ", class: 'form-control'  %>
+      </div>
+    
+      <div class="btn btn-lg btn-success actions">
+        <%= f.submit "Neue Position erstellen" %>
+      </div>
+    </div>
+  </form>
+  
+<% end %>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Openposition</title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <script src="sorttable.js"></script> 
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+  </head>
+
+  <body>
+    <div>
+      <%= render "layouts/navigation" %>
+    </div>
+    
+    <div>
+      <%= yield %>
+      
+    </div>
+    <div>
+      <%= render "layouts/footer" %>
+    </div>
+  </body>
+</html>

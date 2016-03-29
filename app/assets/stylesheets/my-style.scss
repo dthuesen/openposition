@@ -1,0 +1,78 @@
+/* NAVIGATION 
+=====================================*/
+.top-nav-font {
+    color: #fff;
+}
+
+/* BUTTONS 
+=====================================*/
+.btn-success {
+    background-color: #8cbf26;
+}
+.btn-success:hover {
+    background-color: #60792D;
+}
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: none;
+        background-color: none;
+
+    cursor: pointer;
+}
+.input {
+    -webkit-appearance: none;
+    background-color: none;
+    background: none;
+}
+
+/* SORTABLE TABLES 
+=====================================*/
+.sortable thead {
+    text-align: left;
+    background-color: #8cbf26 !IMPORTANT;
+    color:#FFF;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 5px 0 5px;
+}
+
+/* LAYOUT 
+=====================================*/
+
+.top-space-70 {
+    margin-top: 70px;
+}
+.top-space-50 {
+    margin-top: 50px;
+}
+.top-space-30 {
+    margin-top: 30px;
+}
+
+.full-width {
+  width: 100% !IMPORTANT;
+  position: inherit;
+}
+
+.bs-docs-footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 100px;
+    color: #99979c;
+    text-align: left;
+    background-color: #2a2730;
+}
+
+
+/* PADDING 
+=====================================*/
+.padding-top-70 { 
+    padding-top: 70px; 
+}
+
+.padding-bottom-70 { 
+    margin-bottom: 70px; 
+}
+
+body {
+    padding-top: 70px;
+}
