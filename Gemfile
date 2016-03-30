@@ -23,6 +23,8 @@ gem 'sprockets-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
 
+gem 'best_in_place', github: 'bernat/best_in_place'
+
 gem 'rails_db', '~> 0.7'
 
 # Use jquery as the JavaScript library

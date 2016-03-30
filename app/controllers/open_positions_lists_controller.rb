@@ -1,6 +1,7 @@
 class OpenPositionsListsController < ApplicationController
+
   before_action :set_open_positions_list, only: [:show, :edit, :update, :destroy]
-  before_action :open_position_list_number_new, only: [:new]
+  before_action :open_position_list_number_new, only: [:new, :new_short]
 
   # GET /open_positions_lists
   # GET /open_positions_lists.json
@@ -16,6 +17,11 @@ class OpenPositionsListsController < ApplicationController
   # GET /open_positions_lists/new
   def new
     @open_positions_list
+  end
+  
+  # GET /open_positions_lists/new_short
+  def new_short
+    @open_positions_list = OpenPositionsList.new
   end
 
   # GET /open_positions_lists/1/edit
@@ -44,10 +50,10 @@ class OpenPositionsListsController < ApplicationController
     respond_to do |format|
       if @open_positions_list.update(open_positions_list_params)
         format.html { redirect_to open_positions_lists_path, notice: 'Open positions list was successfully updated.' }
-        format.json { render :show, status: :ok, location: open_positions_lists_path }
+        format.json { respond_with_bip(open_positions_list_params) }
       else
         format.html { render :edit }
-        format.json { render json: @open_positions_list.errors, status: :unprocessable_entity }
+        format.json { respond_with_bip(open_positions_list_params) }
       end
     end
   end

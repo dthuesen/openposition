@@ -6,6 +6,13 @@
 #= require action_cable
 #= require_self
 #= require_tree ./channels
+# app/assets/javascripts/active_admin.js.coffee
+#= require best_in_place
+#= require jquery.purr
+#= require best_in_place.purr
 #
 # @App ||= {}
 # App.cable = ActionCable.createConsumer()
+
+$(document).ready ->
+  jQuery(".best_in_place").best_in_place()

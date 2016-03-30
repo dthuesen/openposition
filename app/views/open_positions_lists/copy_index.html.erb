@@ -36,7 +36,7 @@
         <%= form_for(open_positions_list) do |f| %>
         <tr>
           <!-- <td>< - %= open_positions_list.shortlist %> </td> -->
-          <td class="btn btn-shortlist dropdown-xs"><%= best_in_place open_positions_list, :shortlist, :as => :select, :collection => [['Ja', 'Ja'], ['Nein', 'Nein']]%></td>
+          <td class="btn btn-xs dropdown-xs"><%= f.select :shortlist, ['Ja', 'Nein'], class: 'form-control'%> </td>
           <td><%= open_positions_list.number %></td>
           <td><%= open_positions_list.summary %></td>
           <td><%= open_positions_list.description %></td>
@@ -68,11 +68,6 @@
 </div>
   <div>
   <%= link_to 'Neue Position anlegen', new_open_positions_list_path, class: 'btn btn-success' %>
-</div>
-
-</div>
-  <div>
-  <%= link_to 'Schnell anfügen', new_short_path, class: 'btn btn-success' %>
 </div>
 
 

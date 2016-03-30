@@ -11,7 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require best_in_place
 //= require jquery_ujs
+//= require jquery-ui
+//= require best_in_place.jquery-ui
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
@@ -19,3 +22,8 @@
 //= require bootstrap-table
 //  # Replace below with desired locale if needed
 //= require locale/bootstrap-table-ru-RU
+
+$(document).ready(function() {
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+});

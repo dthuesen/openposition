@@ -12,6 +12,16 @@
 .btn-success:hover {
     background-color: #60792D;
 }
+.btn-shortlist {
+    color: #181818;
+    background-color: #E8E8E8;
+    width: 50px;
+    font-size: 12px;
+    padding: 0px;
+    margin: 8px 4px 0 3px;
+}
+
+
 button, html input[type=button], input[type=reset], input[type=submit] {
     -webkit-appearance: none;
     background-color: none !IMPORTANT;
@@ -30,6 +40,10 @@ button, html input[type=button], input[type=reset], input[type=submit] {
     font-weight: bold;
     cursor: pointer;
     margin: 0 5px 0 5px;
+}
+
+td, th {
+    height: auto !IMPORTANT;
 }
 
 /* LAYOUT 

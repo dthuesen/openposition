@@ -33,7 +33,9 @@
       
       <!-- Shortlist Selector -->
       <div class="btn btn-lg dropdown">
-        <%= f.select :shortlist, ['Ja', 'Nein'], :prompt => "Auf die Shortlist?", class: 'form-control' %>
+        Auf die Shortlist setzen? &nbsp; &nbsp;
+        <%= f.select :shortlist, ['Ja', 'Nein'], :selected => 'Ja', :prompt => "Auf die Shortlist?", class: 'form-control' %>
+        &nbsp;&nbsp;&nbsp;&nbsp; | 
       </div>
       
       <!-- Komponente Selector -->
