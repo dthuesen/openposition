@@ -11,20 +11,20 @@
     <thead style="background-color: #E6FFB4;">
       <tr>
         <th>Shortlist</th>
-        <th>Number</th>
-        <th>Summary</th>
-        <th>Description</th>
+        <th>Nr.</th>
+        <th style="min-width: 200px;">Summary</th>
+        <th style="min-width: 200px;">Description</th>
         <th>Option</th>
         <th>Component</th>
         <th>Category</th>
         <th>Prio</th>
-        <th>Responsible</th>
+        <th>Respon- sible</th>
         <th>State</th>
-        <th>Costmodel</th>
+        <th>Cost- model</th>
         <th>Affects version</th>
-        <th>Issue ticket</th>
-        <th>Ticket text</th>
-        <th>Notes</th>
+        <th style="min-width: 65px;">Issue ticket</th>
+        <th style="min-width: 180px;">Ticket text</th>
+        <th style="min-width: 180px;">Notes</th>
         <th>In sprint</th>
         <th colspan="1"></th>
       </tr>
@@ -36,12 +36,13 @@
         <%= form_for(open_positions_list) do |f| %>
         <tr>
           <!-- <td>< - %= open_positions_list.shortlist %> </td> -->
-          <td class="btn btn-shortlist dropdown-xs"><%= best_in_place open_positions_list, :shortlist, :as => :select, :collection => [['Ja', 'Ja'], ['Nein', 'Nein']]%></td>
+          <td class="btn btn-shortlist dropdown-xs"><%= best_in_place open_positions_list, :shortlist, :as => :select, :collection => [['Ja', 'Ja'], ['Nein', 'Nein']] %></td>
           <td><%= open_positions_list.number %></td>
           <td><%= open_positions_list.summary %></td>
           <td><%= open_positions_list.description %></td>
           <td><%= open_positions_list.option %></td>
-          <td><%= open_positions_list.component %></td>
+          <td class="btn dropdown-xs"><%= best_in_place open_positions_list, :component, :as => :select, 
+                                      :collection => [['Facebook', 'Facebook'], ['Twitter', 'Twitter'], ['GuteFrage', 'GuteFrage'], ['Youtube', 'Youtube']] %></td>
           <td><%= open_positions_list.category %></td>
           <td><%= open_positions_list.prio %></td>
           <td><%= open_positions_list.responsible %></td>
@@ -67,12 +68,13 @@
   
 </div>
   <div>
-  <%= link_to 'Neue Position anlegen', new_open_positions_list_path, class: 'btn btn-success' %>
+  <%= link_to 'Neue Position', new_open_positions_list_path, class: 'btn btn-sm btn-success' %>
+  <%= link_to 'Schnell anfügen', new_short_path, class: 'btn btn-sm btn-success' %>
 </div>
 
 </div>
   <div>
-  <%= link_to 'Schnell anfügen', new_short_path, class: 'btn btn-success' %>
+  
 </div>
 
 
