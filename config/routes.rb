@@ -1,5 +1,20 @@
 Rails.application.routes.draw do
-  resources :open_positions_lists
+  # resources :open_positions_lists
+  
+  # resources :open_positions_lists do
+  #   collection do
+  #     put :shortlist_editor
+  #   end
+  # end
+  
+  resources :open_positions_lists do
+    collection do
+      post :shortlist_editor
+    end
+  end
+  
+  # put 'shortlist_editor' => "open_positions_lists#shortlist_editor"
+  
   get 'static_pages/shortlist'
 
   get 'static_pages/about'

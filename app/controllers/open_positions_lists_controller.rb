@@ -1,5 +1,5 @@
 class OpenPositionsListsController < ApplicationController
-  before_action :set_open_positions_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_open_positions_list, only: [:show, :edit, :update, :destroy, :shortlist_editor]
   before_action :open_position_list_number_new, only: [:new]
 
   # GET /open_positions_lists
@@ -60,6 +60,11 @@ class OpenPositionsListsController < ApplicationController
       format.html { redirect_to open_positions_lists_url, notice: 'Open positions list was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  def shortlist_editor
+    OpenPositionsList.update_all( {shortlist: true}, { id: params[:open_positions_list_ids] } )
+    redirect_to open_positions_lists_path
   end
 
   private
