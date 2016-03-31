@@ -6,12 +6,13 @@
 <section class="full-width center">
   
   <div >
-<%= form_tag( {controller: "open_positions_lists", action: "shortlist_editor"}, method: "post") do %>
+<%= form_tag shortlist_editor_url, method: :put do %>
   <table class="table table-striped table-sm table-hover sortable">
     <thead style="background-color: #E6FFB4;">
       <tr>
         <th colspan="1"></th>
         <th>Shortlist</th>
+        <th>ID</th>
         <th>Number</th>
         <th>Summary</th>
         <th>Description</th>
@@ -38,6 +39,7 @@
         <tr>
           <td><%= check_box_tag "open_positions_list_ids[]", open_positions_list.id %></td>
           <td><%= open_positions_list.shortlist %></td>
+          <td><%= open_positions_list.id %></td>
           <td><%= open_positions_list.number %></td>
           <td><%= open_positions_list.summary %></td>
           <td><%= open_positions_list.description %></td>

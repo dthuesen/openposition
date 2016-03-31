@@ -1,5 +1,5 @@
 class OpenPositionsListsController < ApplicationController
-  before_action :set_open_positions_list, only: [:show, :edit, :update, :destroy, :shortlist_editor]
+  before_action :set_open_positions_list, only: [:show, :edit, :update, :destroy]
   before_action :open_position_list_number_new, only: [:new]
 
   # GET /open_positions_lists
@@ -20,6 +20,12 @@ class OpenPositionsListsController < ApplicationController
 
   # GET /open_positions_lists/1/edit
   def edit
+  end
+  
+  def shortlist_editor
+    # OpenPositionsList.update_all( {shortlist: true }, { id: params[:open_positions_list_ids] } )
+    OpenPositionsList.where(id: (params[:open_positions_list_ids])).update_all(shortlist: 'Ja')
+    redirect_to open_positions_lists_url
   end
 
   # POST /open_positions_lists
@@ -62,10 +68,7 @@ class OpenPositionsListsController < ApplicationController
     end
   end
   
-  def shortlist_editor
-    OpenPositionsList.update_all( {shortlist: true}, { id: params[:open_positions_list_ids] } )
-    redirect_to open_positions_lists_path
-  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
