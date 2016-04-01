@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   resources :open_positions_lists
   
-  match 'shortlist_editor', to: 'open_positions_lists#shortlist_editor', via: [:put, :post, :update, :patch]
+  match 'edit_multiple', to: 'open_positions_lists#edit_multiple', via: [:get]
+  match 'update_multiple', to: 'open_positions_lists#update_multiple', via: [:put]
   
   # resources :open_positions_lists do
   #   collection do
-  #     put :shortlist_editor
+  #     get :edit_multiple
+  #     put :update_multiple
   #   end
   # end
   

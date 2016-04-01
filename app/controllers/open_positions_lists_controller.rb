@@ -22,11 +22,19 @@ class OpenPositionsListsController < ApplicationController
   def edit
   end
   
-  def shortlist_editor
-    # OpenPositionsList.update_all( {shortlist: true }, { id: params[:open_positions_list_ids] } )
-    OpenPositionsList.where(id: (params[:open_positions_list_ids])).update_all(shortlist: 'Ja')
-    redirect_to open_positions_lists_url
+  # def shortlist_editor
+  #   # OpenPositionsList.update_all( {shortlist: true }, { id: params[:open_positions_list_ids] } )
+  #   OpenPositionsList.where(id: (params[:open_positions_list_ids])).update_all(shortlist: 'Ja')
+  #   redirect_to open_positions_lists_url
+  # end
+  
+  def edit_multiple
+    @opl = OpenPositionsList.find(params[open_positions_list[id]])
   end
+
+  def update_multiple
+  end
+  
 
   # POST /open_positions_lists
   # POST /open_positions_lists.json
