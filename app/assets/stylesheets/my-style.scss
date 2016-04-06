@@ -4,6 +4,12 @@
     color: #fff;
 }
 
+/* TABLE FONT COLOURS 
+=====================================*/
+.bip-placeholder {
+  color: DarkGray;
+}
+
 /* BUTTONS 
 =====================================*/
 .btn-success {
@@ -12,29 +18,61 @@
 .btn-success:hover {
     background-color: #60792D;
 }
-button, html input[type=button], input[type=reset], input[type=submit] {
-    -webkit-appearance: none;
-    background-color: none !IMPORTANT;
-    background: none !IMPORTANT;
-    cursor: pointer;
-    border: none;
-}
+// button, html input[type=button], input[type=reset], input[type=submit] {
+//     -webkit-appearance: none;
+//     background: none !IMPORTANT;
+//     cursor: pointer;
+//     border: none;
+// }
+
+/* COLUMN-WIDTHS
+=====================================*/
+.col-sl { width: 20px;}
+.col-id { width: 20px;}
+.col-no { width: 20px;}
+.col-su { min-width: 130px;}
+.col-ds { min-width: 250px;}
+.col-op { width: 200px;}
+.col-co { width: 100px;}
+.col-ca { width: 100px;}
+.col-pr { width: 100px;}
+.col-rp { width: 20px;}
+.col-st { width: 110px;}
+.col-cm { width: 90px;}
+.col-av { min-width: 86px;}
+.col-it { width: 90px;}
+.col-tt { width: 220px;}
+.col-nt { width: 220px;}
+.col-is { width: 80px;}
 
 
-/* SORTABLE TABLES 
+/* TABLES / SORTABLE TABLES
 =====================================*/
 .sortable thead {
     text-align: left;
     background-color: #8cbf26 !IMPORTANT;
     color:#FFF;
-    font-weight: bold;
     cursor: pointer;
-    margin: 0 5px 0 5px;
 }
+.table-head {
+    font-size: 0.8em !IMPORTANT;
+    font-weight: normal !IMPORTANT;
+}
+
+
 
 /* LAYOUT 
 =====================================*/
-
+.container-opl {
+    
+    max-width: 1600px;
+    // min-width: 900px;
+    padding-left: 10px;
+    padding-right: 10px;
+    // margin-left: 15px;
+    // margin-right: 15px;
+    margin: 0 auto;
+}
 .top-space-70 {
     margin-top: 70px;
 }
@@ -43,20 +81,6 @@ button, html input[type=button], input[type=reset], input[type=submit] {
 }
 .top-space-30 {
     margin-top: 30px;
-}
-
-.full-width {
-  width: 100% !IMPORTANT;
-  position: inherit;
-}
-
-.bs-docs-footer {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    margin-top: 100px;
-    color: #99979c;
-    text-align: left;
-    background-color: #2a2730;
 }
 
 
@@ -70,6 +94,31 @@ button, html input[type=button], input[type=reset], input[type=submit] {
     margin-bottom: 70px; 
 }
 
-body {
-    padding-top: 70px;
+
+/* SITEWRAP & FOOTER 
+=====================================*/
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+  padding-top: 50px;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -142px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 142px; 
+}
+.site-footer {
+  color: #99979c;
+  background: #2a2730;
+  margin-left: 0px;
+  margin-right: 0px;
 }

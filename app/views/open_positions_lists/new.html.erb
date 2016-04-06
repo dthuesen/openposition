@@ -1,7 +1,26 @@
-<h1>New Open Positions List</h1>
+<p id="notice"><%= notice %></p>
 <div class="container">
-        <%= render 'form', open_positions_list: @open_positions_list %>
+  <div class="row">
+    <div >
+      <h1>New Topic</h1><br>
+    </div>
+    
+
+      <div>
+        <div class="row">
+          <%= render 'form', open_positions_list: @open_positions_list %> 
+        </div>
+      </div>
+
+  </div>
+  <div >
+    
+    <br>
+    <br>
+    <br>
+  </div>
 </div>
 
 
-<%= link_to 'Back', open_positions_lists_path %>
+
+

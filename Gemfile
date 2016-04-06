@@ -16,14 +16,16 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'autoprefixer-rails' # i'm not sure whether this is relevant
-gem 'bootstrap-table-rails'
+# gem 'bootstrap-table-rails'
 gem 'sprockets-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
-
+gem 'simple_form'
 gem 'rails_db', '~> 0.7'
+gem 'best_in_place', github: 'bernat/best_in_place'
+# gem 'glyphicons-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

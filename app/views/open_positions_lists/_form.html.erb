@@ -1,95 +1,75 @@
-<%= form_for(open_positions_list) do |f| %>
-  <% if open_positions_list.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(open_positions_list.errors.count, "error") %> prohibited this open_positions_list from being saved:</h2>
-
-      <ul>
-      <% open_positions_list.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class='form-group'>
+  <%= simple_form_for(open_positions_list) do |f| %>
+    <div >
+      
+      <%= f.input :number, as: :hidden %>
+      
+      <div>
+        <%= f.input :shortlist, as: :boolean, 
+                                checked_value: true, 
+                                unchecked_value: false, 
+                                :label => "Auf die Shortlist setzen", 
+                                input_html: { checked: true } %>
+      </div>
+      <div title="Kurzfassung der neuen Postion">
+        <%= f.input :summary, required: true, label: false, placeholder: "Kurzfassung der neuen Postion" %>
+      </div>
+      <div title="Beschreibung des Problems, der Anforderung, etc.">
+        <%= f.input :description, label: false, placeholder: "Beschreibung des Problems, der Anforderung, etc." %>
+      </div>
+    
+      <div class="row">
+        <div class="btn dropdown">
+          <%= f.input :component, label: false, as: :select, collection: [ 'Facebook', 'Twitter', 'GuteFrage','Youtube', 'Instagram', 
+                                                            'Foren', 'anderes SN (s. Beschreibung)', 'Agent Desktop', 
+                                                            'Overview Panel', 'Detail Panel', 'Statistik', 'FAQ', 'Publishing', 
+                                                            'Config', 'System allgemein', 'Import', 'Filter', 
+                                                            'sonstiges (s. Beschreibung)'], 
+                                                            :prompt => "Welche Komponente ist betroffen" %>
+        </div>
+        <div class="btn dropdown">
+          <%= f.input :category, label: false, as: :select, collection: [ "FEATURE", "BUG", "IMPROVEMENT", "PROJECT", "STOPPED"], :prompt => "Kategorie wählen" %>
+        </div>
+        <div class="btn dropdown">
+          <%= f.input :prio, label: false, as: :select, collection: ['TRIVIAL', 'MINOR', 'MAJOR', 'CRITICAL', 'BLOCKER'], :prompt => "Priorisierung wählen" %>
+        </div>
+        <div class="btn dropdown">
+          <%= f.input :responsible, label: false, as: :select, collection: ['PO', 'QM', 'PL'], :prompt => "Zuständigkeit wählen" %>
+        </div>
+        <div class="btn dropdown">
+          <%= f.input :state, label: false, as: :select, collection: ['NEW', 'TO-DO', 'ANALYSIS', 'IN PROGRESS', 'QA', 'DONE', 'REJECTED'], :prompt => "Aktueller Status" %>
+        </div>
+        <div class="btn dropdown">
+          <%= f.input :costmodel, label: false, as: :select, collection: ['Roadmap', 'Cost-Sharing', 'Kundenprojekt'], :prompt => "Kostenmodell angeben" %>
+        </div>
+      </div>
+      <div title="Optionale Begründung">
+          <%= f.input :option, label: false, placeholder: "Optionale Begründungen" %>
+      </div>
+    
+      <div title="Betroffene Versionen">
+        <%= f.input :affects_version, label: false, placeholder: "Betroffene Versionen" %>
+      </div>
+      
+      <div title="Ticket-Nummer">
+        <%= f.input :issue_ticket, label: false, placeholder: "Ticket-Nummer eintragen, sobald vorhanden" %>
+      </div>
+      
+      <div title="Ticket-Text">
+        <%= f.input :ticket_text, label: false, placeholder: "Ticket-Text reinkopieren, wenn vorhanden" %>
+      </div>
+      
+      <div title="Notizen">
+        <%= f.input :notes, label: false, placeholder: "Platz für Notizen" %>
+      </div>
+      
+      <div title="In Sprint...">
+        <%= f.input :in_sprint, label: false, placeholder: "Umsetzung in Sprint..." %>
+      </div>
+    
+      <%= f.button :submit, class: 'btn btn-success', value: "Erstellen" %> &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Abbrechen', open_positions_lists_path %>
     </div>
+    
   <% end %>
-
-  <form class="form-inline">
-    <div class="form-group">
-
-      <div class="field">
-        <%= f.label :number %>
-        <%= f.number_field :number, class: 'form-control' %>
-      </div>
-    
-      <div class="field">
-        <%= f.text_area :summary, placeholder: "Bezeichnung / Zusammenfassung / Kennung vom Kunden", class: 'form-control'  %>
-      </div>
-    
-      <div class="field">
-        <%= f.text_area :description, placeholder: "Ausführlichere Beschreibung der Anforderung", class: 'form-control'  %>
-      </div>
-    
-      <div class="field">
-        <%= f.text_area :option, placeholder: "Optionales Feld für Ergänzungen, Kundenanmerkungen, Abmachungen, etc.", class: 'form-control'  %>
-      </div>
-      
-      <!-- Shortlist Selector -->
-      <div class="btn btn-lg dropdown">
-        <%= f.select :shortlist, ['Ja', 'Nein'], :prompt => "Auf die Shortlist?", class: 'form-control' %>
-      </div>
-      
-      <!-- Komponente Selector -->
-      <div class="btn btn-lg dropdown">
-        <%= f.select :component, ['Facebook', 'Twitter', 'GuteFrage','Youtube', 'Instagram', 'Foren', 'anderes SN (s. Beschreibung)', 'Agent Desktop', 'Overview Panel', 'Detail Panel', 'Statistik', 'FAQ', 'Publishing', 'Config', 'System allgemein', 'Import', 'Filter', 'sonstiges [s. Beschreibung)'], :prompt => "Betrifft Komponente", class: 'form-control'  %>
-      </div>
-      
-      <!-- Kategorie Selector -->
-      <div class="btn btn-lg dropdown">
-        <%= f.select :category, ['FEATURE', 'BUG', 'IMPROVEMENT', 'PROJECT', 'STOPPED'], :prompt => "Kategorie wählen", class: 'form-control' %>
-      </div>
-      
-      <!-- Prio Selector -->
-      <div class="btn btn-lg dropdown">
-        <%= f.select :prio, ['TRIVIAL', 'MINOR', 'MAJOR', 'CRITICAL', 'BLOCKER'], :prompt => "Priorisierung wählen", class: 'form-control'  %>
-      </div>
-      
-      <!-- Verantwortlichkeit Selector -->
-      <div class="btn btn-lg dropdown">
-        <%= f.select :responsible, ['PO', 'QM', 'PL'], :prompt => "Zuständigkeit wählen", class: 'form-control'  %>
-      </div>
-      
-      <!-- Status Selector -->
-      <div class="btn btn-lg dropdown">
-        <%= f.select :state, ['TO-DO', 'ANALYSIS', 'IN PROGRESS', 'QA', 'DONE', 'REJECTED'], :prompt => "Aktueller Status", class: 'form-control'  %>
-      </div>
-      
-      <!-- Kostenmodell Selector -->
-      <div class="btn btn-lg dropdown">
-        <%= f.select :costmodel, ['Roadmap', 'Cost-Sharing', 'Kundenprojekt'], :prompt => "Kostenmodell angeben", class: 'form-control'  %>
-      </div>
-    
-      <div class="field">
-        <%= f.text_field :affects_version, placeholder: "Affected Versions", class: 'form-control'  %>
-      </div>
-      
-      <div class="field">
-        <%= f.text_field :issue_ticket, placeholder: "Ticket-Nummer in JIRA", class: 'form-control'  %>
-      </div>
-    
-      <div class="field">
-        <%= f.text_area :ticket_text, placeholder: "Text des Tickets", class: 'form-control'  %>
-      </div>
-    
-      <div class="field">
-        <%= f.text_area :notes, placeholder: "Zusätzliche Notizen", class: 'form-control'  %>
-      </div>
-    
-      <div class="field">
-        <%= f.text_field :in_sprint, placeholder: "Umgestezt in Sprint XYZ", class: 'form-control'  %>
-      </div>
-    
-      <div class="btn btn-success">
-        <%= f.submit "Neue Position erstellen" %>
-      </div>
-    </div>
-  </form>
   
-<% end %>
+</div>

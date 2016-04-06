@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160325141603) do
+ActiveRecord::Schema.define(version: 20160406185717) do
 
   create_table "open_positions_lists", force: :cascade do |t|
     t.integer  "number"
@@ -22,16 +22,16 @@ ActiveRecord::Schema.define(version: 20160325141603) do
     t.string   "category"
     t.string   "prio"
     t.string   "responsible"
-    t.string   "state"
+    t.string   "state",           default: "NEW"
     t.string   "costmodel"
     t.string   "affects_version"
-    t.string   "issue_ticket"
+    t.string   "issue_ticket",    default: "SC-"
     t.text     "ticket_text"
     t.text     "notes"
     t.string   "in_sprint"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "shortlist"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "shortlist"
   end
 
 end
