@@ -3,7 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 # $(document).ready ->
-$(document).on "turbolinks:load", ->
-  jQuery(".best_in_place").best_in_place()
+
 
 

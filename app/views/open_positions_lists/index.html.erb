@@ -43,94 +43,23 @@
 
           <%= form_for(open_positions_list) do |f| %>
           <tr>
-            <td><%= best_in_place open_positions_list, :shortlist, as: :checkbox, :collection => [["No", false], ["Yes!", true]]  %></td>
-            <!--<td>< %= open_positions_list.shortlist %></td>-->
+            <td><%= open_positions_list.shortlist %></td>
             <td><%= open_positions_list.id %></td>
             <td><%= open_positions_list.number %></td>
-            <td><%= best_in_place open_positions_list, :summary, :as => :textarea %></td>
-            <td><%= best_in_place open_positions_list, :description, :as => :textarea %></td>
-            <td><%= best_in_place open_positions_list, :option, :as => :textarea, 
-                                                            :place_holder => "Optionale Notizen eintragen...", 
-                                                            :ok_button => "OK", 
-                                                            :cancel_button => "Cancel" %></td>
-            <td><%= best_in_place open_positions_list, :component, as: :select, 
-                                                      :collection => [["Facebook", "Facebook"], 
-                                                      ["Gute Frage", "Gute Frage"], 
-                                                      ["Youtube", "Youtube"], 
-                                                      ["Instagram", "Instagram"], 
-                                                      ["Foren", "Foren"], 
-                                                      ["anderes SN (s. Beschreibung)", "anderes SN (s. Beschreibung)"],
-                                                      ["Agent Desktop", "Agent Desktop"],
-                                                      ["Overview Panel", "Overview Panel"],
-                                                      ["Detail Panel", "Detail Panel"],
-                                                      ["Statistik", "Statistik"],
-                                                      ["FAQ", "FAQ"],
-                                                      ["Publishing", "Publishing"],
-                                                      ["Config", "Config"],
-                                                      ["System allgemein", "System allgemein"],
-                                                      ["Import", "Import"],
-                                                      ["Filter", "Filter"],
-                                                      ["sonstiges (s. Beschreibung)", "sonstiges (s. Beschreibung)"]], 
-                                                            :place_holder => "k.A. zur betroffenen Komponente"  %></td>
-            <td><%= best_in_place open_positions_list, :category, 
-                                                    as: :select, 
-                                                    :collection => [["FEATURE", "FEATURE"], 
-                                                    ["BUG", "BUG"], 
-                                                    ["IMPROVEMENT", "IMPROVEMENT"], 
-                                                    ["PROJECT", "PROJECT"], 
-                                                    ["STOPPED", "STOPPED"]], 
-                                                            :place_holder => "k.A. zur Kategorie" %></td>
-            <td><%= best_in_place open_positions_list, :prio,
-                                                    as: :select, 
-                                                    :collection => [["TRIVIAL", "TRIVIAL"], 
-                                                    ["MINOR", "MINOR"], 
-                                                    ["MAJOR", "MAJOR"], 
-                                                    ["CRITICAL", "CRITICAL"], 
-                                                    ["BLOCKER", "BLOCKER"]], 
-                                                            :place_holder => "k.A. zur Priorität" %></td>
-            <td><%= best_in_place open_positions_list, :responsible,
-                                                    as: :select, 
-                                                    :collection => [["PO", "PO"], 
-                                                    ["PL", "PL"], 
-                                                    ["QM", "QM"]], 
-                                                            :place_holder => "k.A. ob PO, PL oder QM" %></td>
-            <td><%= best_in_place open_positions_list, :state, 
-                                                    as: :select, 
-                                                    :collection => [["NEW", "NEW"], 
-                                                    ["TO-DO", "TO-DO"], 
-                                                    ["ANALYSIS", "ANALYSIS"], 
-                                                    ["IN PROGRESS", "IN PROGRESS"], 
-                                                    ["QA", "QA"], 
-                                                    ["DONE", "DONE"], 
-                                                    ["REJECTED", "REJECTED"]], 
-                                                            :place_holder => "k.A. zum Status" %></td>
-            <td><%= best_in_place open_positions_list, :costmodel, 
-                                                    as: :select, 
-                                                    :collection => [["Roadmap", "Roadmap"], 
-                                                    ["Cost-Sharing", "Cost-Sharing"], 
-                                                    ["Kundenprojekt", "Kundenprojekt"]], 
-                                                            :place_holder => "k.A. zum Cost-Model" %></td>
-            <td><%= best_in_place open_positions_list, :affects_version, 
-                                                            :place_holder => "Betroffene Versionen eintragen...", 
-                                                            :ok_button => "OK", 
-                                                            :cancel_button => "Cancel" %></td>
-            <td><%= best_in_place open_positions_list, :issue_ticket, 
-                                                       input_html: { value: "SC-" },
-                                                            :place_holder => "Ticket-Nr. eintragen...", 
-                                                            :ok_button => "OK", 
-                                                            :cancel_button => "Cancel" %></td>
-            <td><%= best_in_place open_positions_list, :ticket_text, :as => :textarea, 
-                                                            :place_holder => "Ticket-Text eintragen...", 
-                                                            :ok_button => "OK", 
-                                                            :cancel_button => "Cancel" %></td>
-            <td><%= best_in_place open_positions_list, :notes, :as => :textarea, 
-                                                            :place_holder => "Notizn...", 
-                                                            :ok_button => "OK", 
-                                                            :cancel_button => "Cancel" %></td>
-            <td><%= best_in_place open_positions_list, :in_sprint, 
-                                                            :place_holder => "In Sprint...", 
-                                                            :ok_button => "OK", 
-                                                            :cancel_button => "Cancel" %></td>
+            <td><%= open_positions_list.description %></td>
+            <td><%= open_positions_list.summary %></td>
+            <td><%= open_positions_list.option %></td>
+            <td><%= open_positions_list.component %></td>
+            <td><%= open_positions_list.category %></td>
+            <td><%= open_positions_list.prio %></td>
+            <td><%= open_positions_list.responsible %></td>
+            <td><%= open_positions_list.state %></td>
+            <td><%= open_positions_list.costmodel %></td>
+            <td><%= open_positions_list.affects_version %></td>
+            <td><%= open_positions_list.issue_ticket %></td>
+            <td><%= open_positions_list.ticket_text %></td>
+            <td><%= open_positions_list.notes %></td>
+            <td><%= open_positions_list.in_sprint %></td>
             <td><%= open_positions_list.updated_at.strftime("%d. %b %Y") %></td>
             <td>
               <ul style="list-style-type:none">
@@ -176,14 +105,5 @@
     $( "td:contains('CRITICAL')" ).css( "color", "OrangeRed" ).css( "font-weight", "bold" );
     $( "td:contains('BLOCKER')" ).css( "color", "FireBrick" ).css( "font-weight", "bold" );
     $( "td:contains('Yes!')" ).css("background-color", "YellowGreen").css( "font-weight", "bold" ).css( "color", "white" );
-
-    $('.best_in_place').bind("ajax:success", function () {$(this).closest('td').effect('highlight'); });
-
-    
-  // $(document).ready(function() {
-  $(document).on "turbolinks:load", ->
-    /* Activating Best In Place */
-    jQuery(".best_in_place").best_in_place();
-  // });
 </script>
 
