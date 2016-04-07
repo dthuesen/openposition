@@ -1,26 +1,3 @@
+<p id="notice"><%= notice %></p>
 
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <h1>Shortlist</h1>
-      <h4>Die Kurzfassung der letzten Änderungen an der OPL</h4>
-      <br>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12">
-        
-        <!-- Data Table -->
-
-        <%= rails_db_data_table 'open_positions_lists', footer: false,
-                                                        columns: ['number', 'summary', 'description', 'state', 'costmodel', 'issue_ticket'],
-                                                        header: true,
-                                                        limit: 50,
-                                                        order_by: :number,
-                                                        order: :desc %>
-                                                        
-        <hr>
-    </div>
-  </div>
-</div>
+<h1>Open Topics ShortList</h1>
