@@ -20,12 +20,12 @@
 //= require jquery.purr
 //= require best_in_place.purr
 //= require sorttable
+//= require_self
 //= require_tree .
 //= # require bootstrap-sprockets
 //= # require bootstrap-table
 //  # Replace below with desired locale if needed
 //  # require locale/bootstrap-table-en-EN
 
-
-
+// application.js
 

@@ -1,4 +1,5 @@
 class OpenPositionsListsController < ApplicationController
+  helper_method :sort_column, :sort_direction
   before_action :set_open_positions_list, only: [:show, :edit, :update, :destroy]
   before_action :open_position_list_number_new, only: [:new]
 
@@ -6,6 +7,7 @@ class OpenPositionsListsController < ApplicationController
   # GET /open_positions_lists.json
   def index
     @open_positions_lists = OpenPositionsList.all
+    @open_positions_lists = OpenPositionsList.order(sort_column + " " + sort_direction)
   end
 
   # GET /open_positions_lists/1
@@ -63,6 +65,16 @@ class OpenPositionsListsController < ApplicationController
   end
 
   private
+    
+    def sort_column
+      OpenPositionsList.column_names.include?(params[:sort]) ? params[:sort] : "number"
+    end
+    
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    end
+    
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_open_positions_list
       @open_positions_list = OpenPositionsList.find(params[:id])

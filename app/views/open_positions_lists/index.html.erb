@@ -12,27 +12,27 @@
   </div>
 
   <div class="row">
-    <table class="table table-striped table-sm table-hover sorttable">
-      <thead style="background-color: YellowGreen; color: white;", class="sortable header">
-        <tr class="table-head">
-          <th class="col-sl">Short-list</th>
-          <th class="col-id">ID</th>
-          <th class="col-no">Num-ber</th>
-          <th class="col-su">Summary</th>
-          <th class="col-ds">Description</th>
-          <th class="col-op">Option</th>
-          <th class="col-co">Component</th>
-          <th class="col-ca">Category</th>
-          <th class="col-pr">Prio</th>
-          <th class="col-rp">Responsible</th>
-          <th class="col-st">State</th>
-          <th class="col-cm">Costmodel</th>
-          <th class="col-av">Affects version</th>
-          <th class="col-it">Issue ticket</th>
-          <th class="col-tt">Ticket text</th>
-          <th class="col-nt">Notes</th>
-          <th class="col-is">In sprint</th>
-          <th class="col-is">Updated</th>
+    <table class="pretty table table-striped table-sm table-hover">
+      <thead style="background-color: YellowGreen; ", class="table-head header">
+        <tr>
+          <th class="col-sl"><%= sortable "shortlist" %></th>
+          <th class="col-id"><%= sortable "id" %></th>
+          <th class="col-no"><%= sortable "number" %></th>
+          <th class="col-su"><%= sortable "summary" %></th>
+          <th class="col-ds"><%= sortable "description" %></th>
+          <th class="col-op"><%= sortable "option" %></th>
+          <th class="col-co"><%= sortable "component" %></th>
+          <th class="col-ca"><%= sortable "category" %></th>
+          <th class="col-pr"><%= sortable "prio" %></th>
+          <th class="col-rp"><%= sortable "responsible" %></th>
+          <th class="col-st"><%= sortable "state" %></th>
+          <th class="col-cm"><%= sortable "costmodel" %></th>
+          <th class="col-av"><%= sortable "affects_version" %></th>
+          <th class="col-it"><%= sortable "issue_ticket" %></th>
+          <th class="col-tt"><%= sortable "ticket_text" %></th>
+          <th class="col-nt"><%= sortable "notes" %></th>
+          <th class="col-is"><%= sortable "in_sprint" %></th>
+          <th class="col-is"><%= sortable "updated_at" %></th>
           <th colspan="" class="sorttable_nosort"></th>
         </tr>
       </thead>
@@ -158,25 +158,31 @@
 </section>
 
 <script>
-  // CELL COLOR DEPENDING ON CONTENT
-  $( "td:contains('BUG')" ).css( "color", "red" );
-  $( "td:contains('MINOR')" ).css( "color", "DeepSkyBlue" );
-  $( "td:contains('MAJOR')" ).css( "color", "GoldenRod" ).css( "font-weight", "bold" );
-  $( "td:contains('FEATURE')" ).css( "color", "DeepSkyBlue" );
-  $( "td:contains('IMPROVEMENT')" ).css( "color", "LimeGreen" );
-  $( "td:contains('PROJECT')" ).css( "color", "DarkSlateGray" );
-  $( "td:contains('STOPPED')" ).css( "color", "DarkGray" );
-  $( "td:contains('NEW')" ).css( "background-color", "PowderBlue" );
-  $( "td:contains('TO-DO')" ).css( "background-color", "PaleGoldenRod" );
-  $( "td:contains('ANALYSIS')" ).css( "background-color", "Silver" );
-  $( "td:contains('IN PROGRESS')" ).css( "background-color", "Khaki" );
-  $( "td:contains('QA')" ).css( "background-color", "Aquamarine" );
-  $( "td:contains('DONE')" ).css( "background-color", "OliveDrab" ).css( "color", "white" );
-  $( "td:contains('REJECTED')" ).css( "background-color", "Thistle " );
-  $( "td:contains('CRITICAL')" ).css( "color", "OrangeRed" ).css( "font-weight", "bold" );
-  $( "td:contains('BLOCKER')" ).css( "color", "FireBrick" ).css( "font-weight", "bold" );
-  $( "td:contains('Yes!')" ).css("background-color", "YellowGreen").css( "font-weight", "bold" ).css( "color", "white" );
+    // CELL COLOR DEPENDING ON CONTENT
+    $( "td:contains('BUG')" ).css( "color", "red" );
+    $( "td:contains('MINOR')" ).css( "color", "DeepSkyBlue" );
+    $( "td:contains('MAJOR')" ).css( "color", "GoldenRod" ).css( "font-weight", "bold" );
+    $( "td:contains('FEATURE')" ).css( "color", "DeepSkyBlue" );
+    $( "td:contains('IMPROVEMENT')" ).css( "color", "LimeGreen" );
+    $( "td:contains('PROJECT')" ).css( "color", "DarkSlateGray" );
+    $( "td:contains('STOPPED')" ).css( "color", "DarkGray" );
+    $( "td:contains('NEW')" ).css( "background-color", "PowderBlue" );
+    $( "td:contains('TO-DO')" ).css( "background-color", "PaleGoldenRod" );
+    $( "td:contains('ANALYSIS')" ).css( "background-color", "Silver" );
+    $( "td:contains('IN PROGRESS')" ).css( "background-color", "Khaki" );
+    $( "td:contains('QA')" ).css( "background-color", "Aquamarine" );
+    $( "td:contains('DONE')" ).css( "background-color", "OliveDrab" ).css( "color", "white" );
+    $( "td:contains('REJECTED')" ).css( "background-color", "Thistle " );
+    $( "td:contains('CRITICAL')" ).css( "color", "OrangeRed" ).css( "font-weight", "bold" );
+    $( "td:contains('BLOCKER')" ).css( "color", "FireBrick" ).css( "font-weight", "bold" );
+    $( "td:contains('Yes!')" ).css("background-color", "YellowGreen").css( "font-weight", "bold" ).css( "color", "white" );
 
-  $('.best_in_place').bind("ajax:success", function () {$(this).closest('td').effect('highlight'); });
+    $('.best_in_place').bind("ajax:success", function () {$(this).closest('td').effect('highlight'); });
+
+    
+  $(document).ready(function() {
+    /* Activating Best In Place */
+    jQuery(".best_in_place").best_in_place();
+  });
 </script>
 

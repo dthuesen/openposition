@@ -4,6 +4,25 @@
     color: #fff;
 }
 
+/* SORTABLE 
+=====================================*/
+
+.pretty th .current {
+  color: white !IMPORTANT;
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.pretty th .asc a {
+  background-image: url(/images/up_arrow.gif);
+}
+
+.pretty th .desc a {
+  background-image: url(/images/down_arrow.gif);
+}
+
+
 /* TABLE FONT COLOURS 
 =====================================*/
 .bip-placeholder {
@@ -54,7 +73,8 @@
     color:#FFF;
     cursor: pointer;
 }
-.table-head {
+.table-head a {
+    color: #FFF;
     font-size: 0.8em !IMPORTANT;
     font-weight: normal !IMPORTANT;
 }
