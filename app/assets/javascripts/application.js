@@ -16,10 +16,11 @@
 //= require_directory .
 //= require turbolinks
 //= require bootstrap
-//= require_tree .
 //= require best_in_place
 //= require jquery.purr
 //= require best_in_place.purr
+//= require sorttable
+//= require_tree .
 //= # require bootstrap-sprockets
 //= # require bootstrap-table
 //  # Replace below with desired locale if needed
