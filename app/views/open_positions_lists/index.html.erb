@@ -180,9 +180,10 @@
     $('.best_in_place').bind("ajax:success", function () {$(this).closest('td').effect('highlight'); });
 
     
-  $(document).ready(function() {
+  // $(document).ready(function() {
+  $(document).on "turbolinks:load", ->
     /* Activating Best In Place */
     jQuery(".best_in_place").best_in_place();
-  });
+  // });
 </script>
 
