@@ -145,6 +145,9 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
     rails_db (0.9.9)
       axlsx_rails
       codemirror-rails
@@ -158,6 +161,8 @@ GEM
       sass-rails
       simple_form
       terminal-table
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (5.0.0.beta3)
       actionpack (= 5.0.0.beta3)
       activesupport (= 5.0.0.beta3)
@@ -233,6 +238,7 @@ DEPENDENCIES
   pg
   puma
   rails (>= 5.0.0.beta3, < 5.1)
+  rails_12factor
   rails_db (~> 0.7)
   sass-rails (~> 5.0)
   simple_form
