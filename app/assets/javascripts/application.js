@@ -16,7 +16,8 @@
 //= require_directory .
 //= require turbolinks
 //= require bootstrap
-//= require jquery.purr
+//= require bootstrap-editable
+//= require bootstrap-editable-rails
 //= require sorttable
 //= require_self
 //= require_tree .

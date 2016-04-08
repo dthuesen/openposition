@@ -7,6 +7,16 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
 
+  <script>
+     //turn to inline mode
+    $.fn.editable.defaults.mode = 'inline';
+    
+    $(document).ready(function() {
+        $('#summary').editable();
+    });
+  </script>
+
+
   </head>
 
   <body>
