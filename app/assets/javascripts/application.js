@@ -11,11 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.purr
-//= require best_in_place
-//= require best_in_place.purr
 //= require jquery_ujs
-//= require jquery-ui
 //= require_directory .
 //= require turbolinks
 //= require bootstrap
@@ -28,4 +24,6 @@
 //  # require locale/bootstrap-table-en-EN
 
 // application.js
+//= require best_in_place
+
 

@@ -21,7 +21,7 @@ gem 'sprockets-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
 gem 'simple_form'
-gem 'best_in_place', github: 'bernat/best_in_place'
+gem 'best_in_place', '~> 3.0.1'
 # gem 'glyphicons-rails'
 
 # Use jquery as the JavaScript library
@@ -57,7 +57,6 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  gem 'best_in_place', github: 'bernat/best_in_place'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
