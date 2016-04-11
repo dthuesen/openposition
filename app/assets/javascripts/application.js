@@ -11,14 +11,14 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.purr
+//= require best_in_place
+//= require best_in_place.purr
 //= require jquery_ujs
 //= require jquery-ui
 //= require_directory .
 //= require turbolinks
 //= require bootstrap
-//= require best_in_place
-//= require jquery.purr
-//= require best_in_place.purr
 //= require sorttable
 //= require_self
 //= require_tree .
