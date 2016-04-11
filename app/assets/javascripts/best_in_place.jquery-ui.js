@@ -49,3 +49,4 @@ BestInPlaceEditor.forms.date = {
             event.data.editor.abort();
         }
     }
+};
