@@ -3,6 +3,9 @@
   <head>
     <title>Open Topics List</title>
     <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
     
     <script>
       $(document).ready(function() {
@@ -10,12 +13,6 @@
         jQuery(".best_in_place").best_in_place();
       });
     </script>
-    
-    <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
-    
-
 
   </head>
 
