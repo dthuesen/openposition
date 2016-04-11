@@ -3,9 +3,18 @@
   <head>
     <title>Open Topics List</title>
     <%= csrf_meta_tags %>
+    
+    <script>
+      $(document).ready(function() {
+        $('.best_in_place').best_in_place();
+      })
+    </script>
+    
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+    
+
 
   </head>
 
