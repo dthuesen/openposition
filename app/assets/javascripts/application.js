@@ -28,3 +28,4 @@
 
 // application.js
 
+$('.editable').editable()

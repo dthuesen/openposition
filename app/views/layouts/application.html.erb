@@ -12,7 +12,14 @@
     $.fn.editable.defaults.mode = 'inline';
     
     $(document).ready(function() {
-        $('#summary').editable();
+        $('.summary').editable();
+    });
+    $(document).ready(function() {
+        $('.shortlist').editable({
+        type: 'checklist',
+        source: { false: 'enabled'},
+        emptytext: 'true'
+        });
     });
   </script>
 

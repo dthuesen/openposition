@@ -24,6 +24,7 @@ gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
 gem 'simple_form'
 gem 'bootstrap-editable-rails'
+gem 'pry', :group => :development
 # gem 'glyphicons-rails'
 
 # Use jquery as the JavaScript library

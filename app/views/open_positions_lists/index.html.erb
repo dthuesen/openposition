@@ -43,10 +43,12 @@
 
           <%= form_for(open_positions_list) do |f| %>
           <tr>
-            <td><%= open_positions_list.shortlist %></td>
+            <td><a href="#" class="shortlist" data-resource="open_positions_list", data-url="open_positions_lists/<%= open_positions_list.id %>"></a></td>
+              
+              
             <td><%= open_positions_list.id %></td>
             <td><%= open_positions_list.number %></td>
-            <td><a href="#" id="summary" data-emptytext="Bitte Summary eingeben" data-type="textarea" data-pk="1" data-resource="open_positions_list"  data-source="/summary" data-name="summary" data-url="open_positions_lists/<%= open_positions_list.id %>" data-original-title="Enter summary"><%= open_positions_list.description %></a></td>
+            <td><a href="#" class="summary" data-emptytext="<%= open_positions_list.summary %>" data-type="textarea" data-resource="open_positions_list"  data-source="/summary" data-name="summary" data-url="open_positions_lists/<%= open_positions_list.id %>" data-original-title="summary" ><%= textarea_format(open_positions_list.summary) %></a></td>
             <td><%= open_positions_list.description %></td>
             <td><%= open_positions_list.option %></td>
             <td><%= open_positions_list.component %></td>
