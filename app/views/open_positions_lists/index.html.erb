@@ -47,8 +47,12 @@
             <!--<td>< %= open_positions_list.shortlist %></td>-->
             <td><%= open_positions_list.id %></td>
             <td><%= open_positions_list.number %></td>
-            <td><%= best_in_place open_positions_list, :summary, :as => :textarea %></td>
-            <td><%= best_in_place open_positions_list, :description, :as => :textarea %></td>
+            <td><%= best_in_place open_positions_list, :summary, :as => :textarea, 
+                                                            :ok_button => "OK", 
+                                                            :cancel_button => "Cancel" %></td>
+            <td><%= best_in_place open_positions_list, :description, :as => :textarea, 
+                                                            :ok_button => "OK", 
+                                                            :cancel_button => "Cancel" %></td>
             <td><%= best_in_place open_positions_list, :option, :as => :textarea, 
                                                             :place_holder => "Optionale Notizen eintragen...", 
                                                             :ok_button => "OK", 
@@ -158,6 +162,7 @@
 </section>
 
 <script>
+  $(document).ready(function() {
     // CELL COLOR DEPENDING ON CONTENT
     $( "td:contains('BUG')" ).css( "color", "red" );
     $( "td:contains('MINOR')" ).css( "color", "DeepSkyBlue" );
@@ -178,4 +183,7 @@
     $( "td:contains('Yes!')" ).css("background-color", "YellowGreen").css( "font-weight", "bold" ).css( "color", "white" );
 
     $('.best_in_place').bind("ajax:success", function () {$(this).closest('td').effect('highlight'); });
+    
+  });
+    
 </script>
