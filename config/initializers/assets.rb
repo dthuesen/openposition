@@ -9,6 +9,10 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+# ->
+Rails.application.config.assets.precompile += %w( best_in_place.jquery-ui.js )
+Rails.application.config.assets.precompile += %w( best_in_place.js )
+Rails.application.config.assets.precompile += %w( best_in_place.purr.js )
 
 Rails.application.config.assets.precompile += %w( rails_db/logo.png )
 Rails.application.config.assets.precompile += %w( rails_db/logo_mini.png )
