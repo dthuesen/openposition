@@ -43,7 +43,8 @@
 
           <%= form_for(open_positions_list) do |f| %>
           <tr>
-            <td><%= best_in_place open_positions_list, :shortlist, as: :checkbox, :collection => [["No", false], ["Yes!", true]]  %></td>
+            <!--<td>< %= best_in_place open_positions_list, :shortlist, as: :checkbox, :collection => [["No", false], ["Yes!", true]]  %></td>-->
+            <td><%= best_in_place open_positions_list, :shortlist, as: :select, :collection => [[false, "No!"], [true, "Yes!"]]  %></td>
             <!--<td>< %= open_positions_list.shortlist %></td>-->
             <td><%= open_positions_list.id %></td>
             <td><%= open_positions_list.number %></td>
@@ -164,23 +165,27 @@
 <script>
   $(document).ready(function() {
     // CELL COLOR DEPENDING ON CONTENT
-    $( "td:contains('BUG')" ).css( "color", "red" );
-    $( "td:contains('MINOR')" ).css( "color", "DeepSkyBlue" );
-    $( "td:contains('MAJOR')" ).css( "color", "GoldenRod" ).css( "font-weight", "bold" );
-    $( "td:contains('FEATURE')" ).css( "color", "DeepSkyBlue" );
-    $( "td:contains('IMPROVEMENT')" ).css( "color", "LimeGreen" );
-    $( "td:contains('PROJECT')" ).css( "color", "DarkSlateGray" );
-    $( "td:contains('STOPPED')" ).css( "color", "DarkGray" );
-    $( "td:contains('NEW')" ).css( "background-color", "PowderBlue" );
-    $( "td:contains('TO-DO')" ).css( "background-color", "PaleGoldenRod" );
-    $( "td:contains('ANALYSIS')" ).css( "background-color", "Silver" );
-    $( "td:contains('IN PROGRESS')" ).css( "background-color", "Khaki" );
-    $( "td:contains('QA')" ).css( "background-color", "Aquamarine" );
-    $( "td:contains('DONE')" ).css( "background-color", "OliveDrab" ).css( "color", "white" );
-    $( "td:contains('REJECTED')" ).css( "background-color", "Thistle " );
-    $( "td:contains('CRITICAL')" ).css( "color", "OrangeRed" ).css( "font-weight", "bold" );
-    $( "td:contains('BLOCKER')" ).css( "color", "FireBrick" ).css( "font-weight", "bold" );
-    $( "td:contains('Yes!')" ).css("background-color", "YellowGreen").css( "font-weight", "bold" ).css( "color", "white" );
+    $( "td" ).mousemove(function(){ $( "td:contains('BUG')" ).css( "color", "red" ); });
+    $( "td" ).mousemove(function(){ $( "td:contains('TRIVIAL')" ).css( "color", "grey" ).css( "font-weight", "normal" ); });
+    $( "td" ).mousemove(function(){ $( "td:contains('MINOR')" ).css( "color", "DeepSkyBlue" ); });
+    $( "td" ).mousemove(function(){ $( "td:contains('MAJOR')" ).css( "color", "GoldenRod" ).css( "font-weight", "bold" ); });
+    $( "td" ).mousemove(function(){ $( "td:contains('FEATURE')" ).css( "color", "DeepSkyBlue" ); });
+    $( "td" ).mousemove(function(){ $( "td:contains('IMPROVEMENT')" ).css( "color", "LimeGreen" ); });
+    $( "td" ).mousemove(function(){ $( "td:contains('PROJECT')" ).css( "color", "DarkSlateGray" ); });
+    $( "td" ).mousemove(function(){ $( "td:contains('STOPPED')" ).css( "color", "DarkGray" ); });
+    $( "td" ).mousemove(function(){ $( "td:contains('NEW')" ).css( "background-color", "PowderBlue" ); });
+    $( "td" ).mousemove(function(){ $( "td:contains('TO-DO')" ).css( "background-color", "PaleGoldenRod" ).css( "color", "DarkGray" ); });
+    $( "td" ).mousemove(function(){ $( "td:contains('ANALYSIS')" ).css( "background-color", "Silver" ); });
+    $( "td" ).mousemove(function(){ $( "td:contains('IN PROGRESS')" ).css( "background-color", "Khaki" ); });
+    $( "td" ).mousemove(function(){ $( "td:contains('QA')" ).css( "background-color", "Aquamarine" ); });
+    $( "td" ).mousemove(function(){ $( "td:contains('DONE')" ).css( "background-color", "OliveDrab" ).css( "color", "white" ); });
+    $( "td" ).mousemove(function(){ $( "td:contains('REJECTED')" ).css( "background-color", "Thistle " ); });
+    $( "td" ).mousemove(function(){ $( "td:contains('CRITICAL')" ).css( "color", "OrangeRed" ).css( "font-weight", "bold" ); });
+    $( "td" ).mousemove(function(){ $( "td:contains('BLOCKER')" ).css( "color", "FireBrick" ).css( "font-weight", "bold" ); });
+    $( "td" ).mousemove(function(){ $( "td:contains('Yes!')" ).css("background-color", "YellowGreen").css( "font-weight", "bold" ).css( "color", "white" ); });
+    $( "td" ).mousemove(function(){ $( "td:contains('No!')" ).css("background-color", "inherit").css( "font-weight", "bold" ).css( "color", "DarkGray" ); });
+    $( "td" ).click(function(){ $( "td:contains('Yes!')" ).css("background-color", "YellowGreen").css( "font-weight", "bold" ).css( "color", "white" ); });
+    $( "td" ).scroll(function(){ $( "td:contains('Yes!')" ).css("background-color", "YellowGreen").css( "font-weight", "bold" ).css( "color", "white" ); });
 
     $('.best_in_place').bind("ajax:success", function () {$(this).closest('td').effect('highlight'); });
     

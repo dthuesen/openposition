@@ -39,6 +39,13 @@
     <%= javascript_include_tag 'best_in_place.jquery-ui' %>
     <%= javascript_include_tag 'best_in_place.purr' %>
     
+    <script>
+      $(document).ready(function() {
+        /* Activating Best In Place */
+        jQuery(".best_in_place").best_in_place();
+      });
+    </script>
+    
   </body>
 </html>
 
