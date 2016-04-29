@@ -6,6 +6,12 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     
+    <script>    
+      $(document).ready(function() {
+        $(".best_in_place").best_in_place();
+      });
+    </script>
+    
   </head>
   <body>
     
@@ -39,12 +45,12 @@
     <%= javascript_include_tag 'best_in_place.jquery-ui' %>
     <%= javascript_include_tag 'best_in_place.purr' %>
     
-    <script>
-      $(document).ready(function() {
+    <!--<script>-->
+    <!--  $(document).ready(function() {-->
         /* Activating Best In Place */
-        jQuery(".best_in_place").best_in_place();
-      });
-    </script>
+    <!--    jQuery(".best_in_place").best_in_place();-->
+    <!--  });-->
+    <!--</script>-->
     
   </body>
 </html>
