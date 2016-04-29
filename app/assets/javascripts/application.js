@@ -25,4 +25,6 @@
 //  # require locale/bootstrap-table-en-EN
 // application.js
 
-
+$(document).ready(function() {
+  $(".best_in_place").best_in_place();
+});
