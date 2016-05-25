@@ -18,16 +18,18 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'autoprefixer-rails' # i'm not sure whether this is relevant
 # gem 'bootstrap-table-rails'
 gem 'sprockets-rails'
+gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
-gem 'simple_form'
-gem 'best_in_place', '~> 3.0.1'
-# gem 'glyphicons-rails'
-
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5.x'
+gem 'best_in_place', '~> 3.0.1'
+gem 'simple_form'
+gem 'autosize-rails', '~> 1.18', '>= 1.18.17'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # Use Redis adapter to run Action Cable in production

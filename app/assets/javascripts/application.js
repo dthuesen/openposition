@@ -11,12 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require tether
 //= require best_in_place
 //= require jquery_ujs
 //= require_directory .
+//= require sorttable
 //= require turbolinks
 //= require bootstrap
-//= require sorttable
 //= require_self
 //= require_tree .
 //= # require bootstrap-sprockets
@@ -25,6 +26,8 @@
 //  # require locale/bootstrap-table-en-EN
 // application.js
 
-$(document).ready(function() {
-  $(".best_in_place").best_in_place();
-});
+
+// $(document).ready(function() {
+//   $(".best_in_place").best_in_place();
+// });
+

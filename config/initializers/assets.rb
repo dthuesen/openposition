@@ -11,6 +11,7 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 # ->
 Rails.application.config.assets.precompile += %w( jquery-2.2.3.min.js )
+Rails.application.config.assets.precompile += %w( jquery-ui.min.js )
 Rails.application.config.assets.precompile += %w( best_in_place.jquery-ui.js )
 Rails.application.config.assets.precompile += %w( best_in_place.js )
 Rails.application.config.assets.precompile += %w( best_in_place.purr.js )

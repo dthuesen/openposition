@@ -1,17 +1,21 @@
 body {
+  display: inline;
+  position: relative;
+  margin: 0 50% 0 43%;
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  font-size: 11px;
   line-height: 18px;
-  margin: 33px;
+
+  // margin: 33px;
 }
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-  margin: 33px;
+  font-size: 11px;
+  line-height: 16px;
+  // margin: 33px;
 }
 
 pre {
@@ -79,7 +83,7 @@ div {
   }
 
   ul li {
-    font-size: 12px;
+    font-size: 11px;
     list-style: square;
   }
 }
