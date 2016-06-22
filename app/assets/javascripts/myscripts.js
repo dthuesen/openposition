@@ -26,6 +26,8 @@ $(document).ready(function() {
       $( "td:contains('BLOCKER')" ).css( {"color": "FireBrick", "font-weight": "bold"} );
       $( "td:contains('Yes!')" ).css( {"background-color": "YellowGreen", "font-weight": "bold", "color": "white"} );
       $( "td:contains('No!')" ).css( {"background-color": "inherit", "font-weight": "bold", "color": "DarkGray"} );
+      $( "td:contains('Kundenprojekt')" ).css( {"color": "darkslategray", "font-weight": "bold"} );
+      $( "td:contains('Cost-Sharing')" ).css( {"color": "darkslategray", "font-weight": "bold"} );
     });
   
   td.click(function(){ $( "td:contains('Yes!')" ).css( {"background-color": "YellowGreen", "font-weight": "bold", "color": "white"} ); });

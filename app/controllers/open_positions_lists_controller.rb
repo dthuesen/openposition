@@ -82,7 +82,7 @@ class OpenPositionsListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def open_positions_list_params
-      params.require(:open_positions_list).permit(:shortlist, :number, :summary, :description, :option, :component, :category, :prio, :responsible, :state, :costmodel, :affects_version, :issue_ticket, :ticket_text, :notes, :in_sprint)
+      params.require(:open_positions_list).permit(:shortlist, :number, :summary, :description, :option, :component, :category, :prio, :responsible, :state, :costmodel, :affects_version, :issue_ticket, :ticket_text, :notes, :in_sprint, :client)
     end
     
     def open_position_list_number_new

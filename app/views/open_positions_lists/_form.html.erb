@@ -1,75 +1,81 @@
-<div class='form-group'>
-  <%= simple_form_for(open_positions_list) do |f| %>
-    <div >
+  <div class='form-group'>
+    <%= simple_form_for(open_positions_list) do |f| %>
+      <div >
+        
+        <%= f.input :number, as: :hidden %>
+        <div class="row">
+          <div title="Kunde" class="btn dropdown col-md-2">
+            <%= f.input :client, required: true, label: false, placeholder: "Kundenname", as: :select, collection: [ "O2", "Telefonica"], :prompt => "Kundenname wählen" %>
+          </div>
+          <div class="col-md-2">
+            <%= f.input :shortlist, as: :boolean, 
+                                    checked_value: true, 
+                                    unchecked_value: false, 
+                                    :label => "Auf die Shortlist setzen", 
+                                    input_html: { checked: true } %>
+          </div>
+        </div>
+        
+        
+        <div title="Kurzfassung der neuen Postion">
+          <%= f.input :summary, required: true, label: false, placeholder: "Kurzfassung der neuen Postion"%>
+        </div>
+        <div title="Beschreibung des Problems, der Anforderung, etc.">
+          <%= f.input :description, label: false, placeholder: "Beschreibung des Problems, der Anforderung, etc." %>
+        </div>
       
-      <%= f.input :number, as: :hidden %>
+        <div class="row">
+          <div class="btn dropdown col-md-3">
+            <%= f.input :component, label: false, as: :select, collection: [ 'Facebook', 'Twitter', 'GuteFrage','Youtube', 'Instagram', 
+                                                              'Foren', 'anderes SN (s. Beschreibung)', 'Agent Desktop', 
+                                                              'Overview Panel', 'Detail Panel', 'Statistik', 'FAQ', 'Publishing', 
+                                                              'Config', 'System allgemein', 'Import', 'Filter', 
+                                                              'sonstiges (s. Beschreibung)'], 
+                                                              :prompt => "Welche Komponente ist betroffen" %>
+          </div>
+          <div class="btn dropdown col-md-2">
+            <%= f.input :category, label: false, as: :select, collection: [ "FEATURE", "BUG", "IMPROVEMENT", "PROJECT", "STOPPED"], :prompt => "Kategorie wählen" %>
+          </div>
+          <div class="btn dropdown col-md-2">
+            <%= f.input :prio, label: false, as: :select, collection: ['TRIVIAL', 'MINOR', 'MAJOR', 'CRITICAL', 'BLOCKER'], :prompt => "Priorisierung wählen" %>
+          </div>
+          <div class="btn dropdown col-md-1">
+            <%= f.input :responsible, label: false, as: :select, collection: ['PO', 'QM', 'PL'], :prompt => 'Zuständigkeit wählen...  ' %>
+          </div>
+          <div class="btn dropdown col-md-2">
+            <%= f.input :state, label: false, as: :select, collection: ['NEW', 'TO-DO', 'ANALYSIS', 'IN PROGRESS', 'QA', 'DONE', 'REJECTED'], :prompt => "Aktueller Status" %>
+          </div>
+          <div class="btn dropdown col-md-2">
+            <%= f.input :costmodel, label: false, as: :select, collection: ['Roadmap', 'Cost-Sharing', 'Kundenprojekt'], :prompt => "Kostenmodell angeben" %>
+          </div>
+        </div>
+        <div title="Optionale Begründung">
+            <%= f.input :option, label: false, placeholder: "Optionale Begründungen" %>
+        </div>
       
-      <div>
-        <%= f.input :shortlist, as: :boolean, 
-                                checked_value: true, 
-                                unchecked_value: false, 
-                                :label => "Auf die Shortlist setzen", 
-                                input_html: { checked: true } %>
+        <div title="Betroffene Versionen">
+          <%= f.input :affects_version, label: false, placeholder: "Betroffene Versionen" %>
+        </div>
+        
+        <div title="Ticket-Nummer">
+          <%= f.input :issue_ticket, label: false, placeholder: "Ticket-Nummer eintragen, sobald vorhanden" %>
+        </div>
+        
+        <div title="Ticket-Text">
+          <%= f.input :ticket_text, label: false, placeholder: "Ticket-Text reinkopieren, wenn vorhanden" %>
+        </div>
+        
+        <div title="Notizen">
+          <%= f.input :notes, label: false, placeholder: "Platz für Notizen" %>
+        </div>
+        
+        <div title="In Sprint...">
+          <%= f.input :in_sprint, label: false, placeholder: "Umsetzung in Sprint..." %>
+        </div>
+      
+        <%= f.button :submit, class: 'btn btn-success', value: "Erstellen" %> &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Abbrechen', open_positions_lists_path %>
       </div>
-      <div title="Kurzfassung der neuen Postion">
-        <%= f.input :summary, required: true, label: false, placeholder: "Kurzfassung der neuen Postion" %>
-      </div>
-      <div title="Beschreibung des Problems, der Anforderung, etc.">
-        <%= f.input :description, label: false, placeholder: "Beschreibung des Problems, der Anforderung, etc." %>
-      </div>
+      
+    <% end %>
     
-      <div class="row">
-        <div class="btn dropdown">
-          <%= f.input :component, label: false, as: :select, collection: [ 'Facebook', 'Twitter', 'GuteFrage','Youtube', 'Instagram', 
-                                                            'Foren', 'anderes SN (s. Beschreibung)', 'Agent Desktop', 
-                                                            'Overview Panel', 'Detail Panel', 'Statistik', 'FAQ', 'Publishing', 
-                                                            'Config', 'System allgemein', 'Import', 'Filter', 
-                                                            'sonstiges (s. Beschreibung)'], 
-                                                            :prompt => "Welche Komponente ist betroffen" %>
-        </div>
-        <div class="btn dropdown">
-          <%= f.input :category, label: false, as: :select, collection: [ "FEATURE", "BUG", "IMPROVEMENT", "PROJECT", "STOPPED"], :prompt => "Kategorie wählen" %>
-        </div>
-        <div class="btn dropdown">
-          <%= f.input :prio, label: false, as: :select, collection: ['TRIVIAL', 'MINOR', 'MAJOR', 'CRITICAL', 'BLOCKER'], :prompt => "Priorisierung wählen" %>
-        </div>
-        <div class="btn dropdown">
-          <%= f.input :responsible, label: false, as: :select, collection: ['PO', 'QM', 'PL'], :prompt => "Zuständigkeit wählen" %>
-        </div>
-        <div class="btn dropdown">
-          <%= f.input :state, label: false, as: :select, collection: ['NEW', 'TO-DO', 'ANALYSIS', 'IN PROGRESS', 'QA', 'DONE', 'REJECTED'], :prompt => "Aktueller Status" %>
-        </div>
-        <div class="btn dropdown">
-          <%= f.input :costmodel, label: false, as: :select, collection: ['Roadmap', 'Cost-Sharing', 'Kundenprojekt'], :prompt => "Kostenmodell angeben" %>
-        </div>
-      </div>
-      <div title="Optionale Begründung">
-          <%= f.input :option, label: false, placeholder: "Optionale Begründungen" %>
-      </div>
-    
-      <div title="Betroffene Versionen">
-        <%= f.input :affects_version, label: false, placeholder: "Betroffene Versionen" %>
-      </div>
-      
-      <div title="Ticket-Nummer">
-        <%= f.input :issue_ticket, label: false, placeholder: "Ticket-Nummer eintragen, sobald vorhanden" %>
-      </div>
-      
-      <div title="Ticket-Text">
-        <%= f.input :ticket_text, label: false, placeholder: "Ticket-Text reinkopieren, wenn vorhanden" %>
-      </div>
-      
-      <div title="Notizen">
-        <%= f.input :notes, label: false, placeholder: "Platz für Notizen" %>
-      </div>
-      
-      <div title="In Sprint...">
-        <%= f.input :in_sprint, label: false, placeholder: "Umsetzung in Sprint..." %>
-      </div>
-    
-      <%= f.button :submit, class: 'btn btn-success', value: "Erstellen" %> &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Abbrechen', open_positions_lists_path %>
-    </div>
-    
-  <% end %>
-  
-</div>
+  </div>

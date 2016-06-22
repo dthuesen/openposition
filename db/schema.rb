@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406185717) do
+ActiveRecord::Schema.define(version: 20160622183240) do
 
   create_table "open_positions_lists", force: :cascade do |t|
     t.integer  "number"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20160406185717) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.boolean  "shortlist"
+    t.string   "client"
   end
 
 end

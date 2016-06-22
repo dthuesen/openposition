@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Open Topics List</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
@@ -12,13 +14,13 @@
     <div class="page-wrap">
       
       <div class="row">
-        <div >
+        <div>
           <div>
             <%= render "layouts/navigation" %>
           </div>
         </div>
         <div class="row">
-          <div class="container-opl">
+          <div>
             <%= yield %>
           </div>
         </div>

@@ -46,9 +46,9 @@
 
 /* COLUMN-WIDTHS
 =====================================*/
-.col-sl { width: 20px;}
-.col-id { width: 20px;}
-.col-no { width: 20px;}
+.col-sl { width: 18px;}
+.col-id { width: 18px;}
+.col-no { width: 18px;}
 .col-su { min-width: 130px;}
 .col-ds { min-width: 250px;}
 .col-op { width: 200px;}
@@ -84,14 +84,13 @@
 /* LAYOUT 
 =====================================*/
 .container-opl {
-    
-    max-width: 1600px;
-    min-width: 900px;
-    padding-left: 10%;
-    padding-right: 20%;
-    // margin-left: 15px;
-    margin-right: 55px;
-    margin: 0 auto;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: auto 7%;
+    max-width: 1400px;
+    min-width: 600px;
 }
 .top-space-70 {
     margin-top: 70px;
@@ -101,6 +100,10 @@
 }
 .top-space-30 {
     margin-top: 30px;
+}
+body {
+    font-size: 1.3em;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 
@@ -150,6 +153,10 @@ select {
   color: white;
   background-color: #7ab800;
   border:none;
+}
+option {
+  padding: 3px 14px 3px 2px !IMPORTANT;
+  line-height: 2.8em;
 }
 checkbox {
   border: solid;
