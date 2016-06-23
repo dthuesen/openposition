@@ -35,7 +35,138 @@ $(document).ready(function() {
     
   })
   
+  // Shortlist Filter
+  $('#men-shortlist').on('change', function() {
+    let selectedOption = $('#men-shortlist option:selected').val();
+    
+    switch (selectedOption) {
+      case "All":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists");
+        break;
+      case true:
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?shortlist=1");
+        break;
+      case false:
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?shortlist=0");
+        break;
+      default: 
+        window.alert = "Looking forward to the Weekend";
+    }
+
+  })  
   
+  // Category Filter
+  $('#men-category').on('change', function() {
+    let selectedOption = $('#men-category option:selected').val();
+    
+    switch (selectedOption) {
+      case "All":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists");
+        break;
+      case "FEATURE":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?category=FEATURE");
+        break;
+      case "BUG":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?category=BUG");
+        break;
+      case "IMPROVEMENT":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?category=IMPROVEMENT");
+        break;
+      case "PROJECT":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?category=PROJECT");
+        break;
+      case "STOPPED":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?category=STOPPED");
+        break;
+      default: 
+        window.alert = "Looking forward to the Weekend";
+    }
+
+  })  
+  
+  // Client Filter
+  $('#men-client').on('change', function() {
+    let selectedOption = $('#men-client option:selected').val();
+    
+    switch (selectedOption) {
+      case "All":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists");
+        break;
+      case "O2":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?client=O2");
+        break;
+      case "Telefonica":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?client=Telefonica");
+        break;
+      default: 
+        window.alert = "Looking forward to the Weekend";
+    }
+
+  })
+  
+  // Priority Filter
+  $('#men-prio').on('change', function() {
+    let selectedOption = $('#men-client option:selected').val();
+    
+    switch (selectedOption) {
+      case "All":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists");
+        break;
+      case "TRIVIAL":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?prio=TRIVIAL");
+        break;
+      case "MINOR":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?prio=MINOR");
+        break;
+      case "MAJOR":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?prio=MAJOR");
+        break;
+      case "CRITICAL":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?prio=CRITICAL");
+        break;
+      case "BLOCKER":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?prio=BLOCKER");
+        break;
+      default: 
+        window.alert = "Looking forward to the Weekend";
+    }
+
+  })
+  
+  // State Filter
+  $('#men-state').on('change', function() {
+    let selectedOption = $('#men-state option:selected').val();
+    
+    switch (selectedOption) {
+      case "All":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists");
+        break;
+      case "NEW":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?state=NEW");
+        break;
+      case "TO-DO":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?state=TO-DO");
+        break;
+      case "ANALYSIS":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?state=ANALYSIS");
+        break;
+      case "IN PROGRESS":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?state=IN PROGRESS");
+        break;
+      case "QA":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?state=QA");
+        break;
+      case "DONE":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?state=DONE");
+        break;
+      case "REJECTED":
+        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?state=REJECTED");
+        break;
+      default: 
+        window.alert = "Looking forward to the Weekend";
+    }
+
+  })  
   
   
   $(".best_in_place").best_in_place();

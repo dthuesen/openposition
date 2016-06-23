@@ -3,11 +3,21 @@ class OpenPositionsListsController < ApplicationController
   before_action :set_open_positions_list, only: [:show, :edit, :update, :destroy]
   before_action :open_position_list_number_new, only: [:new]
 
+  def shortlist
+    @on_shortlist = OpenPositionsList.where(nil)
+    @on_shortlist = OpenPositionsList.where(shortlist: true)
+  end
+  
   # GET /open_positions_lists
   # GET /open_positions_lists.json
   def index
     @open_positions_lists = OpenPositionsList.all
     @open_positions_lists = OpenPositionsList.order(sort_column + " " + sort_direction)
+    @open_positions_lists = OpenPositionsList.where(nil)
+    filtering_params(params).each do |key, value|
+      @open_positions_lists = @open_positions_lists.public_send(key, value) if value.present?
+    end
+
   end
 
   # GET /open_positions_lists/1
@@ -65,6 +75,11 @@ class OpenPositionsListsController < ApplicationController
   end
 
   private
+    
+    # A list of the param names that can be used for filtering the Product list
+    def filtering_params(params)
+      params.slice(:shortlist, :client, :category, :updated_at, :costmodel, :state, :prio)
+    end
     
     def sort_column
       OpenPositionsList.column_names.include?(params[:sort]) ? params[:sort] : "number"

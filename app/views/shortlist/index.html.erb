@@ -1,65 +1,11 @@
 <div class="container-opl">
-
+  
   <p id="notice"><%= notice %></p>
   
-  <h1>Open Topics List</h1>
+  <h1>Open Topics ShortList</h1>  
   
   <section>
-            <br>
-    <div class="row">
-      <div class="col-md-2">
-        <%= link_to 'Neue Position anlegen', new_open_positions_list_path, class: 'btn btn-default' %><br><br>
-      </div>
-      <form>
-        <div>
-          <span>
-            <select id="men-client" class="btn btn-default">
-                <option value="">Client Filter</option>
-                <option value="All">All</option>
-                <option value="O2">O2</option>
-                <option value="Telefonica">Telefonica</option>
-            </select>
-          </span>
-          <span> 
-            <select id="men-category" class="btn btn-default">
-                <option value="">Category Filter</option>
-                <option value="All">All</option>
-                <option value="FEATURE">FEATURE</option>
-                <option value="BUG">BUG</option>
-                <option value="IMPROVEMENT">IMPROVEMENT</option>
-                <option value="PROJECT">PROJECT</option>
-                <option value="STOPPED">STOPPED</option>
-            </select>
-          </span>
-          <span> 
-            <select id="men-prio" class="btn btn-default">
-                <option value="">Priority Filter</option>
-                <option value="All">All</option>
-                <option value="TRIVIAL">TRIVIAL</option>
-                <option value="MINOR">MINOR</option>
-                <option value="MAJOR">MAJOR</option>
-                <option value="CRITICAL">CRITICAL</option>
-                <option value="BLOCKER">BLOCKER</option>
-            </select>
-          </span>
-          <span> 
-            <select id="men-state" class="btn btn-default">
-                <option value="">State Filter</option>
-                <option value="All">All</option>
-                <option value="NEW">NEW</option>
-                <option value="TO-DO">TO-DO</option>
-                <option value="ANALYSIS">ANALYSIS</option>
-                <option value="IN PROGRESS">IN PROGRESS</option>
-                <option value="QA">QA</option>
-                <option value="DONE">DONE</option>
-                <option value="REJECTED">REJECTED</option>
-            </select>
-          </span>
-        </div>
-      </form>
-    </div>
-  
-    <div class="row">
+        <div class="row">
         <table class="pretty table table-striped table-sm table-hover">
             <thead style="background-color: YellowGreen; ", class="table-head header">
               <tr>
@@ -88,20 +34,18 @@
           
             <tbody>
               
-              <% @open_positions_lists.each do |open_positions_list| %>
+              <% @on_shortlist.each do |on_shortlist| %>
       
-                <%= form_for(open_positions_list) do |f| %>
+                <%= form_for(on_shortlist) do |f| %>
                 <tr>
-                  <!--<td>< %= best_in_place open_positions_list, :shortlist, as: :checkbox, :collection => [["No", false], ["Yes!", true]]  %></td>-->
-                  <td><%= best_in_place open_positions_list, :shortlist, as: :select, :collection => [[false, "No!"], [true, "Yes!"]]  %></td>
-                  <!--<td>< %= open_positions_list.shortlist %></td>-->
-                  <td><%= open_positions_list.id %></td>
-                  <td><%= open_positions_list.number %></td>
-                  <td><%= best_in_place open_positions_list, :summary, :as => :textarea  %></td>
-                  <td><%= best_in_place open_positions_list, :description, :as => :textarea %></td>
-                  <td><%= best_in_place open_positions_list, :option, :as => :textarea, 
+                  <td><%= best_in_place on_shortlist, :shortlist, as: :select, :collection => [[false, "No!"], [true, "Yes!"]]  %></td>
+                  <td><%= on_shortlist.id %></td>
+                  <td><%= on_shortlist.number %></td>
+                  <td><%= best_in_place on_shortlist, :summary, :as => :textarea  %></td>
+                  <td><%= best_in_place on_shortlist, :description, :as => :textarea %></td>
+                  <td><%= best_in_place on_shortlist, :option, :as => :textarea, 
                                                                   :place_holder => "Optionale Notizen eintragen..."  %></td>
-                  <td><%= best_in_place open_positions_list, :component, as: :select, 
+                  <td><%= best_in_place on_shortlist, :component, as: :select, 
                                                             :collection => [["Facebook", "Facebook"], 
                                                             ["Gute Frage", "Gute Frage"], 
                                                             ["Youtube", "Youtube"], 
@@ -120,7 +64,7 @@
                                                             ["Filter", "Filter"],
                                                             ["sonstiges (s. Beschreibung)", "sonstiges (s. Beschreibung)"]], 
                                                                   :place_holder => "k.A. zur betroffenen Komponente"  %></td>
-                  <td><%= best_in_place open_positions_list, :category, 
+                  <td><%= best_in_place on_shortlist, :category, 
                                                           as: :select, 
                                                           :collection => [["FEATURE", "FEATURE"], 
                                                           ["BUG", "BUG"], 
@@ -128,7 +72,7 @@
                                                           ["PROJECT", "PROJECT"], 
                                                           ["STOPPED", "STOPPED"]], 
                                                                   :place_holder => "k.A. zur Kategorie" %></td>
-                  <td><%= best_in_place open_positions_list, :prio,
+                  <td><%= best_in_place on_shortlist, :prio,
                                                           as: :select, 
                                                           :collection => [["TRIVIAL", "TRIVIAL"], 
                                                           ["MINOR", "MINOR"], 
@@ -136,13 +80,13 @@
                                                           ["CRITICAL", "CRITICAL"], 
                                                           ["BLOCKER", "BLOCKER"]], 
                                                                   :place_holder => "k.A. zur Priorität" %></td>
-                  <td><%= best_in_place open_positions_list, :responsible,
+                  <td><%= best_in_place on_shortlist, :responsible,
                                                           as: :select, 
                                                           :collection => [["PO", "PO"], 
                                                           ["PL", "PL"], 
                                                           ["QM", "QM"]], 
                                                                   :place_holder => "k.A." %></td>
-                  <td><%= best_in_place open_positions_list, :state, 
+                  <td><%= best_in_place on_shortlist, :state, 
                                                           as: :select, 
                                                           :collection => [["NEW", "NEW"], 
                                                           ["TO-DO", "TO-DO"], 
@@ -152,33 +96,33 @@
                                                           ["DONE", "DONE"], 
                                                           ["REJECTED", "REJECTED"]], 
                                                                   :place_holder => "k.A. zum Status" %></td>
-                  <td><%= best_in_place open_positions_list, :costmodel, 
+                  <td><%= best_in_place on_shortlist, :costmodel, 
                                                           as: :select, 
                                                           :collection => [["Roadmap", "Roadmap"], 
                                                           ["Cost-Sharing", "Cost-Sharing"], 
                                                           ["Kundenprojekt", "Kundenprojekt"]], 
                                                                   :place_holder => "k.A. zum Cost-Model" %></td>
-                  <td><%= best_in_place open_positions_list, :affects_version, 
+                  <td><%= best_in_place on_shortlist, :affects_version, 
                                                                   :place_holder => "Betroffene Versionen eintragen..." %></td>
-                  <td><%= best_in_place open_positions_list, :issue_ticket, 
+                  <td><%= best_in_place on_shortlist, :issue_ticket, 
                                                              input_html: { value: "SC-" },
                                                                   :place_holder => "Ticket-Nr. eintragen..." %></td>
-                  <td><%= best_in_place open_positions_list, :ticket_text, :as => :textarea, 
+                  <td><%= best_in_place on_shortlist, :ticket_text, :as => :textarea, 
                                                                   :place_holder => "Ticket-Text eintragen..." %></td>
-                  <td><%= best_in_place open_positions_list, :notes, :as => :textarea, 
+                  <td><%= best_in_place on_shortlist, :notes, :as => :textarea, 
                                                                   :place_holder => "Notizn..." %></td>
-                  <td><%= best_in_place open_positions_list, :in_sprint, 
+                  <td><%= best_in_place on_shortlist, :in_sprint, 
                                                                   :place_holder => "In Sprint..." %></td>
-                  <td><%= open_positions_list.updated_at.strftime("%d. %b %Y") %></td>
-                  <td><%= best_in_place open_positions_list, :client,
+                  <td><%= on_shortlist.updated_at.strftime("%d. %b %Y") %></td>
+                  <td><%= best_in_place on_shortlist, :client,
                                                           as: :select, 
                                                           :collection => [["O2", "O2"], ["Telefonica", "Telefonica"]], 
                                                           :place_holder => "k.A." %></td>
                   <td>
                     <ul style="list-style-type:none">
-                      <!-- 'Show' <li>< %= link_to '', open_positions_list, class: 'glyphicon glyphicon-eye-open button', style: 'color:YellowGreen ;' %></li>   -->
-                      <!-- 'Edit' <li>< %= link_to '', edit_open_positions_list_path(open_positions_list), class: 'glyphicon glyphicon-pencil button', style: 'color:YellowGreen ;' %></li>  -->
-                      <li><%= link_to '', open_positions_list, class: 'glyphicon glyphicon-trash button', style: 'color:YellowGreen ;', method: :delete, data: { confirm: 'Are you sure?' } %></li> <!-- 'Destroy' -->
+                      <!-- 'Show' <li>< %= link_to '', on_shortlist, class: 'glyphicon glyphicon-eye-open button', style: 'color:YellowGreen ;' %></li>   -->
+                      <!-- 'Edit' <li>< %= link_to '', edit_on_shortlist_path(on_shortlist), class: 'glyphicon glyphicon-pencil button', style: 'color:YellowGreen ;' %></li>  -->
+                      <li><%= link_to '', on_shortlist, class: 'glyphicon glyphicon-trash button', style: 'color:YellowGreen ;', method: :delete, data: { confirm: 'Are you sure?' } %></li> <!-- 'Destroy' -->
                     </ul>
                   </td>
                 </tr>
@@ -187,15 +131,7 @@
             </tbody>
           </table>
       </div>
-    <div class="row">
-      <div>
-      <br>
-        <%= link_to 'Neue Position anlegen', new_open_positions_list_path, class: 'btn btn-success' %><br><br>
-      </div>  
-    </div>
-    
-    <br>
-    <br>
-    <hr>
   </section>
+  
+  
 </div>
