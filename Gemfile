@@ -25,6 +25,8 @@ gem 'turbolinks', '~> 5.x'
 gem 'best_in_place', '~> 3.0.1'
 gem 'simple_form'
 gem 'autosize-rails', '~> 1.18', '>= 1.18.17'
+gem 'roo'
+gem 'roo-xls'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'

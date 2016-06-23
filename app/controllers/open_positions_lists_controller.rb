@@ -10,12 +10,20 @@ class OpenPositionsListsController < ApplicationController
   
   # GET /open_positions_lists
   # GET /open_positions_lists.json
+  
+  
+  
   def index
     @open_positions_lists = OpenPositionsList.all
     @open_positions_lists = OpenPositionsList.order(sort_column + " " + sort_direction)
     @open_positions_lists = OpenPositionsList.where(nil)
     filtering_params(params).each do |key, value|
       @open_positions_lists = @open_positions_lists.public_send(key, value) if value.present?
+    end
+    respond_to do |format|
+      format.html
+      format.csv { send_data @open_positions_lists.to_csv }
+      format.xls { send_data @open_positions_lists.to_xls }
     end
 
   end
@@ -72,6 +80,12 @@ class OpenPositionsListsController < ApplicationController
       format.html { redirect_to open_positions_lists_url, notice: 'Open positions list was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  def import
+    OpenPositionsList.import(params[:file])
+  
+    redirect_to root_url, notice: 'OPL imported.'
   end
 
   private

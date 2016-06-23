@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   resources :open_positions_lists
   resources :shortlist
   
+  resources :open_positions_lists do
+    collection do
+      post :import
+    end
+  end
+  
   # get 'static_pages/shortlist'
 
   get 'static_pages/about'

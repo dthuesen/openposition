@@ -99,7 +99,7 @@
                   <td><%= open_positions_list.number %></td>
                   <td><%= best_in_place open_positions_list, :summary, :as => :textarea  %></td>
                   <td><%= best_in_place open_positions_list, :description, :as => :textarea %></td>
-                  <td><%= best_in_place open_positions_list, :option, :as => :textarea, 
+                  <td><%= best_in_place open_positions_list, :option, :as => :textarea,
                                                                   :place_holder => "Optionale Notizen eintragen..."  %></td>
                   <td><%= best_in_place open_positions_list, :component, as: :select, 
                                                             :collection => [["Facebook", "Facebook"], 
@@ -147,6 +147,7 @@
                                                           :collection => [["NEW", "NEW"], 
                                                           ["TO-DO", "TO-DO"], 
                                                           ["ANALYSIS", "ANALYSIS"], 
+                                                          ["OPEN", "OPEN"], 
                                                           ["IN PROGRESS", "IN PROGRESS"], 
                                                           ["QA", "QA"], 
                                                           ["DONE", "DONE"], 
@@ -154,9 +155,9 @@
                                                                   :place_holder => "k.A. zum Status" %></td>
                   <td><%= best_in_place open_positions_list, :costmodel, 
                                                           as: :select, 
-                                                          :collection => [["Roadmap", "Roadmap"], 
-                                                          ["Cost-Sharing", "Cost-Sharing"], 
-                                                          ["Kundenprojekt", "Kundenprojekt"]], 
+                                                          :collection => [["ROADMAP", "ROADMAP"], 
+                                                          ["COST-SHARING", "COST-SHARING"], 
+                                                          ["CLIENT-PROJECT", "CLIENT-PROJECT"]], 
                                                                   :place_holder => "k.A. zum Cost-Model" %></td>
                   <td><%= best_in_place open_positions_list, :affects_version, 
                                                                   :place_holder => "Betroffene Versionen eintragen..." %></td>
@@ -191,7 +192,19 @@
       <div>
       <br>
         <%= link_to 'Neue Position anlegen', new_open_positions_list_path, class: 'btn btn-success' %><br><br>
-      </div>  
+      </div>
+      
+      <p>
+        Download:
+        <%= link_to "CSV", open_positions_lists_path(format: "csv") %> |
+        <%= link_to "Excel", open_positions_lists_path(format: "xls") %>
+      </p>
+      
+      <h4>Import OPL</h4>
+        <%= form_tag import_open_positions_lists_path, multipart: true do %>
+          <%= file_field_tag :file %>
+          <%= submit_tag "Import" %>
+        <% end %>
     </div>
     
     <br>

@@ -19,6 +19,7 @@ $(document).ready(function() {
       $( "td:contains('TO-DO')" ).css( {"background-color": "PaleGoldenRod", "color": "DarkGray" } );
       $( "td:contains('ANALYSIS')" ).css( {"background-color": "Silver"} );
       $( "td:contains('IN PROGRESS')" ).css( {"background-color": "Khaki"} );
+      $( "td:contains('OPEN')" ).css( {"color": "white", "background-color": "Red"} );
       $( "td:contains('QA')" ).css( {"background-color": "Aquamarine"} );
       $( "td:contains('DONE')" ).css( {"background-color": "OliveDrab", "color": "white"} );
       $( "td:contains('REJECTED')" ).css( {"background-color": "Thistle"} );
@@ -26,8 +27,8 @@ $(document).ready(function() {
       $( "td:contains('BLOCKER')" ).css( {"color": "FireBrick", "font-weight": "bold"} );
       $( "td:contains('Yes!')" ).css( {"background-color": "YellowGreen", "font-weight": "bold", "color": "white"} );
       $( "td:contains('No!')" ).css( {"background-color": "inherit", "font-weight": "bold", "color": "DarkGray"} );
-      $( "td:contains('Kundenprojekt')" ).css( {"color": "darkslategray", "font-weight": "bold"} );
-      $( "td:contains('Cost-Sharing')" ).css( {"color": "darkslategray", "font-weight": "bold"} );
+      $( "td:contains('CLIENT-PROJECT')" ).css( {"color": "darkslategray", "font-weight": "bold"} );
+      $( "td:contains('COST-SHARING')" ).css( {"color": "darkslategray", "font-weight": "bold"} );
     });
   
   td.click(function(){ $( "td:contains('Yes!')" ).css( {"background-color": "YellowGreen", "font-weight": "bold", "color": "white"} ); });

@@ -3,6 +3,9 @@
 .top-nav-font {
     color: #fff;
 }
+.navbar-brand {
+  font-weight: 800;
+}
 
 /* SORTABLE 
 =====================================*/
@@ -46,23 +49,24 @@
 
 /* COLUMN-WIDTHS
 =====================================*/
-.col-sl { width: 18px;}
-.col-id { width: 18px;}
-.col-no { width: 18px;}
-.col-su { min-width: 130px;}
-.col-ds { min-width: 250px;}
-.col-op { width: 200px;}
-.col-co { width: 100px;}
-.col-ca { width: 100px;}
-.col-pr { width: 100px;}
-.col-rp { width: 20px;}
-.col-st { width: 110px;}
+.col-sl { width: 18px; }
+.col-id { width: 18px; }
+.col-no { width: 18px; }
+.col-su { min-width: 130px; }
+.col-ds { min-width: 240px; }
+.col-op { min-width: 230px; }
+.col-co { width: 100px; }
+.col-ca { width: 100px; }
+.col-pr { width: 100px; }
+.col-rp { width: 20px; }
+.col-st { width: 110px; }
 .col-cm { width: 90px;}
-.col-av { min-width: 86px;}
-.col-it { width: 90px;}
-.col-tt { width: 220px;}
-.col-nt { width: 220px;}
-.col-is { width: 80px;}
+.col-av { min-width: 86px; }
+.col-it { width: 90px; }
+.col-tt { width: 220px; }
+.col-nt { min-width: 200px; }
+.col-is { width: 80px; }
+
 
 
 /* TABLES / SORTABLE TABLES
@@ -75,7 +79,7 @@
 }
 .table-head a {
     color: #FFF;
-    font-size: 0.8em !IMPORTANT;
+    font-size: 0.85em !IMPORTANT;
     font-weight: normal !IMPORTANT;
 }
 
@@ -102,8 +106,11 @@
     margin-top: 30px;
 }
 body {
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-family: 'Roboto Condensed', sans-serif;
+}
+h1 {
+  font-weight: 800;
 }
 
 
