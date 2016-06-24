@@ -107,7 +107,7 @@ $(document).ready(function() {
   
   // Priority Filter
   $('#men-prio').on('change', function() {
-    let selectedOption = $('#men-client option:selected').val();
+    let selectedOption = $('#men-prio option:selected').val();
     
     switch (selectedOption) {
       case "All":
