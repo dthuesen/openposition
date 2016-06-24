@@ -24,3 +24,5 @@ Die Beschreibung der Integration von "Sortable" wie
 hier "https://gist.github.com/onebree/efdf56929f63012ac85e" beschrieben 
 verursachte, dass der JavaScript Code im View im Browser zu lesen war. Daher
 nun keine Implementierung auf diesem Weg. Funktioniert aber dennoch.
+
+Zurück gesetzt.
