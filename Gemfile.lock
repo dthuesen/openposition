@@ -142,7 +142,19 @@ GEM
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+<<<<<<< HEAD
     ruby_dep (1.3.1)
+=======
+    roo (2.4.0)
+      nokogiri (~> 1)
+      rubyzip (~> 1.1, < 2.0.0)
+    roo-xls (1.0.0)
+      nokogiri
+      roo (>= 2.0.0beta1, < 3)
+      spreadsheet (> 0.9.0)
+    ruby-ole (1.2.12)
+    rubyzip (1.2.0)
+>>>>>>> keep_status_roo
     sass (3.4.22)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -153,6 +165,8 @@ GEM
     simple_form (3.2.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
+    spreadsheet (1.1.2)
+      ruby-ole (>= 1.0)
     spring (1.7.1)
     spring-watcher-listen (2.0.0)
       listen (>= 2.7, < 4.0)
@@ -203,6 +217,8 @@ DEPENDENCIES
   rails (~> 5.0.0.rc2)
   rails-assets-tether (>= 1.1.0)!
   rails_12factor
+  roo
+  roo-xls
   sass-rails (~> 5.0)
   simple_form
   spring

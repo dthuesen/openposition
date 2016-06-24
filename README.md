@@ -25,4 +25,8 @@ hier "https://gist.github.com/onebree/efdf56929f63012ac85e" beschrieben
 verursachte, dass der JavaScript Code im View im Browser zu lesen war. Daher
 nun keine Implementierung auf diesem Weg. Funktioniert aber dennoch.
 
+<<<<<<< HEAD
 Zurück gesetzt.
+=======
+Diese Version als Branch dient dem Erhalt der Roo Konfiguration
+>>>>>>> keep_status_roo
