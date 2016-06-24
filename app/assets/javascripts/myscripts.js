@@ -62,22 +62,22 @@ $(document).ready(function() {
     
     switch (selectedOption) {
       case "All":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists");
+        window.location.assign("/open_positions_lists");
         break;
       case "FEATURE":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?category=FEATURE");
+        window.location.assign("/open_positions_lists?category=FEATURE");
         break;
       case "BUG":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?category=BUG");
+        window.location.assign("/open_positions_lists?category=BUG");
         break;
       case "IMPROVEMENT":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?category=IMPROVEMENT");
+        window.location.assign("/open_positions_lists?category=IMPROVEMENT");
         break;
       case "PROJECT":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?category=PROJECT");
+        window.location.assign("/open_positions_lists?category=PROJECT");
         break;
       case "STOPPED":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?category=STOPPED");
+        window.location.assign("/open_positions_lists?category=STOPPED");
         break;
       default: 
         window.alert = "Looking forward to the Weekend";
