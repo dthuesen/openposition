@@ -42,13 +42,13 @@ $(document).ready(function() {
     
     switch (selectedOption) {
       case "All":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists");
+        window.location.assign("/open_positions_lists");
         break;
       case true:
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?shortlist=1");
+        window.location.assign("/open_positions_lists?shortlist=1");
         break;
       case false:
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?shortlist=0");
+        window.location.assign("/open_positions_lists?shortlist=0");
         break;
       default: 
         window.alert = "Looking forward to the Weekend";
@@ -91,13 +91,13 @@ $(document).ready(function() {
     
     switch (selectedOption) {
       case "All":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists");
+        window.location.assign("/open_positions_lists");
         break;
       case "O2":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?client=O2");
+        window.location.assign("/open_positions_lists?client=O2");
         break;
       case "Telefonica":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?client=Telefonica");
+        window.location.assign("/open_positions_lists?client=Telefonica");
         break;
       default: 
         window.alert = "Looking forward to the Weekend";
@@ -111,22 +111,22 @@ $(document).ready(function() {
     
     switch (selectedOption) {
       case "All":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists");
+        window.location.assign("/open_positions_lists");
         break;
       case "TRIVIAL":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?prio=TRIVIAL");
+        window.location.assign("/open_positions_lists?prio=TRIVIAL");
         break;
       case "MINOR":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?prio=MINOR");
+        window.location.assign("/open_positions_lists?prio=MINOR");
         break;
       case "MAJOR":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?prio=MAJOR");
+        window.location.assign("/open_positions_lists?prio=MAJOR");
         break;
       case "CRITICAL":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?prio=CRITICAL");
+        window.location.assign("/open_positions_lists?prio=CRITICAL");
         break;
       case "BLOCKER":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?prio=BLOCKER");
+        window.location.assign("/open_positions_lists?prio=BLOCKER");
         break;
       default: 
         window.alert = "Looking forward to the Weekend";
@@ -140,28 +140,28 @@ $(document).ready(function() {
     
     switch (selectedOption) {
       case "All":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists");
+        window.location.assign("/open_positions_lists");
         break;
       case "NEW":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?state=NEW");
+        window.location.assign("/open_positions_lists?state=NEW");
         break;
       case "TO-DO":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?state=TO-DO");
+        window.location.assign("/open_positions_lists?state=TO-DO");
         break;
       case "ANALYSIS":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?state=ANALYSIS");
+        window.location.assign("/open_positions_lists?state=ANALYSIS");
         break;
       case "IN PROGRESS":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?state=IN PROGRESS");
+        window.location.assign("/open_positions_lists?state=IN PROGRESS");
         break;
       case "QA":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?state=QA");
+        window.location.assign("/open_positions_lists?state=QA");
         break;
       case "DONE":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?state=DONE");
+        window.location.assign("/open_positions_lists?state=DONE");
         break;
       case "REJECTED":
-        window.location.assign("https://rails-dthuesen.c9users.io/open_positions_lists?state=REJECTED");
+        window.location.assign("/open_positions_lists?state=REJECTED");
         break;
       default: 
         window.alert = "Looking forward to the Weekend";
